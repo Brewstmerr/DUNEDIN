@@ -1,7 +1,0 @@
-<div flex show-gt-sm layout-align='end center' id="pay_fines_btn_wrapper_overview">
-	<form id="pay_fines_uname_overview" action="https://www.otago.ac.nz/library/payments/fines/" method="post" target="pay_fines_window">
-		<input type="hidden" name="userId" value="empty">
-	</form>
-	<button type="button" id="pay_fines_btn_overview" ng-click="payFines()">Pay</button>
-</div>
-
