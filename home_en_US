@@ -1,0 +1,93 @@
+<md-content>
+
+    <div layout="row" class="layout-row">
+
+        <md-card flex="100" class="default-card homepage">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Sign in to...</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <ul class="homelist">
+                    <li><img src="/primo-explore/custom/DUNEDIN/img/renew.png" /> Renew items on loan</li>
+                    <li><img src="/primo-explore/custom/DUNEDIN/img/loans.png" /> View your loan history</li>
+                    <li><img src="/primo-explore/custom/DUNEDIN/img/request_bell.png" /> Request items and scans</li>
+                    <li><img src="/primo-explore/custom/DUNEDIN/img/fines.png" /> Pay library fines</li>
+                </ul>
+            </md-card-content>
+        </md-card>
+
+
+    </div>
+
+    <div layout="row" class="layout-row">
+
+        <md-card flex="40" class="default-card homepage" id="searchtips">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Search tips</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p>Use <strong>phrase searching</strong> for an exact match
+                    <br> e.g. "gold mining" otago</p>
+
+                <p>Use this <strong>wildcard symbol (?) within a word</strong> to find single letter variations
+                    <br> e.g. wom?n - will find women and woman</p>
+
+                <p>Use the <strong>wildcard or truncation symbol (*)</strong> to find alternative word endings
+                    <br>e.g. mine* will find mines, miner, mineralogy, minerals...</p>
+
+            </md-card-content>
+        </md-card>
+
+
+        <md-card flex="60" class="default-card homepage" id="boolean">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Boolean searching (AND, OR, and NOT)</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p> <strong>AND</strong> is the default for searches
+                    <br> e.g. water <strong>AND</strong> fluoride <strong>AND</strong> teeth ...is the same as: water fluoride teeth</p>
+
+                <p>Use <strong>OR</strong> to find either a word or phrase in your search results
+                    <br> e.g. student <strong>OR</strong> learner</p>
+
+                <p>Use <strong>NOT</strong> to exclude a word or phrase
+                    <br> e.g. fish <strong>NOT</strong> whales
+                </p>
+
+                <p>You can group terms within a search using parentheses - <strong>(</strong> <strong>)</strong>
+                    <br> e.g. shakespeare <strong>(</strong>drama OR tragedy<strong>)</strong>
+                </p>
+            </md-card-content>
+
+        </md-card>
+
+    </div>
+
+
+    <div layout="row" class="layout-row">
+
+        <md-card flex="100" class="default-card homepage" id="glossary">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">What does that icon mean?</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <ul class="homelist">
+                    <li><img src="custom/DUNEDIN/img/lock.png" alt="image for renew"> Retain this search filter</li>
+                    <li><img src="custom/DUNEDIN/img/exclude.png" alt="image for list of loans"> Exclude this filter from my search</li>
+                    <li><img src="custom/DUNEDIN/img/search_history.png" alt="image for requesting"> Search history</li>
+                    <li><img src="custom/DUNEDIN/img/favourites.png" alt="image for fines"> Favourites</li>
+                    <li><img src="custom/DUNEDIN/img/search_results.png" alt="image for search results"> Back to search</li>
+                </ul>
+            </md-card-content>
+        </md-card>
+
+    </div>
+</md-content>
