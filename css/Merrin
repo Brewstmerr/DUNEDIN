@@ -251,8 +251,7 @@ prm-logo img {display: none;}
 #user_area_after{position:relative;float:right;min-width:200px;height:100%;margin:0;padding:0;}
   
 /*hide boolean tips and search tips on mobile mjb*/
-#boolean, #searchtips {display: none;}
-#boolean, #searchtips {display: none;}
+#boolean, #searchtips {max-width: 100%;}
     
 /*make search button bit tidier mjb*/
 prm-search-bar .simple-search-wrapper md-autocomplete-wrap input {height: 59px;}
