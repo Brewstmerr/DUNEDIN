@@ -2,27 +2,6 @@
 
     <div layout="row" class="layout-row">
 
-        <md-card flex="100" class="default-card homepage">
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Sign in to...</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <ul class="homelist">
-                    <li><img src="/primo-explore/custom/DUNEDIN/img/renew.png" /> Renew items on loan</li>
-                    <li><img src="/primo-explore/custom/DUNEDIN/img/loans.png" /> View your loan history</li>
-                    <li><img src="/primo-explore/custom/DUNEDIN/img/request_bell.png" /> Request items and scans</li>
-                    <li><img src="/primo-explore/custom/DUNEDIN/img/fines.png" /> Pay library fines</li>
-                </ul>
-            </md-card-content>
-        </md-card>
-
-
-    </div>
-
-    <div layout="row" class="layout-row">
-
         <md-card flex="40" class="default-card homepage" id="searchtips">
             <md-card-title>
                 <md-card-title-text>
