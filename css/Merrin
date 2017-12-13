@@ -6,6 +6,9 @@ body,prm-topbar .md-button,.md-button {text-transform: none;}
 /*put yellow strip along top buttons mjb*/
 prm-topbar {border-top: 13px solid #f9c000;}
 
+/*ejournal page mjb*/
+prm-atoz-search-bar {background:#79838d;}
+
 /*make logo area bit better mjb*/
 prm-logo .product-logo{cursor:pointer;height:100%;padding:0}
 
@@ -99,7 +102,7 @@ select#signin_choice{-webkit-appearance:none;-moz-appearance:none;appearance:non
 .sign_out_buttonV{position:absolute;right:1em;top:1.6em;width:82px;border:1px solid #e1e1e1;border-radius:3px;min-height:0;height:2.5em;padding:0;overflow:hidden}
 
 /*don't display sign in/out icon mjb */
-#sign_out_button > button > prm-icon > md-icon,prm-authentication > button > prm-icon > md-icon {display: none;}
+#sign_out_button > button > prm-icon > md-icon,prm-authentication > button > prm-icon > md-icon, prm-user-area-after .sign_out_buttonV prm-icon > md-icon {display: none;}
 
 /*make sure Sign out words are visible mjb */
 #sign_out_button span {color: #333;}
@@ -176,7 +179,7 @@ prm-main-menu prm-authentication {padding-left: 0;}
 /* horizontal rows for mobile etc (pinched from Mike) mjb*/
 md-backdrop._md-dialog-backdrop {z-index: 101;}
 
-/*without this ejournals disappears mjb */
+/*without this ejournals disappears... random EL, random. mjb */
 prm-main-menu md-card.transparent-card:nth-child(2) {display: flex;}
 
 /*menu after ellipses clicked (maybe exclude from screen width check?)*/
@@ -242,7 +245,7 @@ prm-logo img {display: none;}
     
 #mobile_menu {display: none;}
 
-/*.mobile-menu-button{border-left:1px solid #e1e1e1;border-right:1px solid #e1e1e1;width:60px;}*/
+.mobile-menu-button{border-left:1px solid #e1e1e1;border-right:1px solid #e1e1e1;width:60px;}
   
 /*fit user area in mjb */
 #user_area_after{position:relative;float:right;min-width:200px;height:100%;margin:0;padding:0;}
@@ -290,8 +293,11 @@ button#more-links-button {border-left:1px solid #e1e1e1;}
 
 }
 
+/*@media screen and (min-width:768px) and (max-width:936px){
+button#more-links-button {border-right:1px solid #e1e1e1;}
+}*/
 @media screen  and (min-width:768px) and (max-width:998px){
-/*#mainMenu > a:nth-child(3), #mainMenu > a:nth-child(4) {display: none;}*/
+#mainMenu > a:nth-child(3), #mainMenu > a:nth-child(4) {display: none;}
 button#more-links-button {border-left:1px solid #e1e1e1;}
 }
 
@@ -299,23 +305,28 @@ button#more-links-button {border-left:1px solid #e1e1e1;}
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
  {
-#mainMenu > a:nth-child(3), #mainMenu > a:nth-child(4) {display: none;}
+ #mainMenu > a:nth-child(4) {display: none;}
 }
 
 @media screen and (min-width:998px) and (max-width:1104px){
-     #mainMenu > a:nth-child(4) {display: none;}
+#mainMenu > a:nth-child(4) {display: none;}
 }
 
-@media screen and (min-width:998px) and (max-width:1010px){
+@media screen and (min-width:998px) and (max-width:1022px){
 button#more-links-button {border-right:1px solid #e1e1e1;}
+
 }
 
 /*November release bits */
 
 /*remove additional ellipsis in top bar mjb*/
-prm-user-area > button.mobile-menu-button {display: none;}
+@media screen and (min-width:600px){
+button.mobile-menu-button {display: none;}
+}
 
 /*remove extra space in basic search results mjb */
 .search-result-availability-line-wrapper {
-min-height: 0em;
+min-height: 0.5em;
 }
+
+/*end Merrin's code 13/12/2017*/
