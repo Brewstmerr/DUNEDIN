@@ -5,15 +5,15 @@
 var app = angular.module('viewCustom', ['angularLoad']);
 
 /*set up area for header image & link*/
-//app.component('prmLogoAfter', {
-        //template: '<div class="moblogo bannerHeight">\
-        			//<div id="banner_ketu" class="blocks">\
-					//<a class="linkDisplay" href="https://otago-staging.hosted.exlibrisgroup.com/primo-explore/search?vid=DUNEDIN&lang=en_US&search_scope=All" aria-label="Start a new search of the library catalogue Library Search Ketu">\
-						//<img src="custom/DUNEDIN/img/library-logo-csm.png"></img>\
-					//</a>\
-        			//</div>\
-			//</div>'
-//});
+/*app.component('prmLogoAfter', {
+        template: '	<div class="moblogo bannerHeight">\
+        			<div id="banner_ketu" class="blocks">\
+					<a class="linkDisplay" href="https://otago-staging.hosted.exlibrisgroup.com/primo-explore/search?vid=DUNEDIN&lang=en_US&search_scope=All" aria-label="Start a new search of the library catalogue Library Search Ketu">\
+						<img src="custom/DUNEDIN/img/library-logo-csm.png"></img>\
+					</a>\
+        			</div>\
+			</div>'
+});*/
 
 /* hijack the onclick of the logo */
 app.controller('prmLogoAfterController', function($scope, $element, $compile) {
@@ -76,23 +76,33 @@ app.component('prmLogoAfter', {
 
 
 // rework the top menu items
-app.controller('prmTopbarAfterController', function() {
+app.controller('prmTopbarAfterController', function($compile, $scope) {
 	setTimeout(function(){
 		//Need to add an href to the main menu links, or they don't open correctly when told to open in a new tab
-		// New search
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(1)").href = "/primo-explore/search?vid=DUNEDIN&lang=en_US";
-		// E-journals
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(2)").href = "/primo-explore/jsearch?vid=DUNEDIN&lang=en_US";
-		// Databases
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(3)").href = "http://www.otago.ac.nz/library/databases/index.php";
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(3)").target = "_blank";
-		// Help
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(4)").href = "http://otago.libguides.com/librarysearch";
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(4)").target = "_blank";
-		// Library home
-		document.querySelector("prm-main-menu>div>div a:nth-of-type(5)").href = "http://www.otago.ac.nz/library/index.html";
-	}, 1000);
+		try {	// New search
+			document.querySelector('[aria-label="New search"]').href = "/primo-explore/search?vid=DUNEDIN&lang=en_US";
+		} catch (e) {}
+		try {	// E-journals
+			document.querySelector('[aria-label="E-journals"]').href = "/primo-explore/jsearch?vid=DUNEDIN&lang=en_US";
+		} catch (e) {}
+		try {	// Databases
+			var db = document.querySelector('[aria-label="Databases"]');
+			db.href = "http://www.otago.ac.nz/library/databases/index.php";
+			db.target = "_blank";
+			db.setAttribute("onclick", "return false;");
+		} catch (e) {}
+		try {	// Help
+			var help = document.querySelector('[aria-label="Help"]');
+			help.href = "https://otago.libguides.com/ketuhelp";
+			help.target = "_blank";
+			help.setAttribute("onclick", "return false;");
+		} catch (e) {}
+		try {	// Library home
+			document.querySelector('[aria-label="Library home"]').href = "http://www.otago.ac.nz/library/index.html";
+		} catch (e) {}
+	}, 2000);
 });
+
 
 app.component('prmTopbarAfter', {
 	bindings: {
@@ -122,10 +132,10 @@ app.controller('prmUserAreaAfterController', ['$element', '$scope', '$location',
 		angular.element(elementRemove.children[0]).remove();
 	  
 		$scope.signIn = function (choice) {
+			
 			var signin_choice = document.getElementById("signin_choice").value;
 			var start_full_url = "";
 			var end_full_url = "";
-			
 			if (choice == 'main') {
 				switch (signin_choice) {
 					case "UO":
@@ -158,6 +168,7 @@ app.controller('prmUserAreaAfterController', ['$element', '$scope', '$location',
 				var target_url = "https://otago-staging.hosted.exlibrisgroup.com/shib/DUNEDIN/pds_main?func=load-login&calling_system=primo&institute=DUNEDIN&PDS_HANDLE=&url=https://otago-staging.hosted.exlibrisgroup.com:443/primo_library/libweb/pdsLogin?targetURL=https%3A%2F%2Fotago-staging%2Ehosted%2Eexlibrisgroup%2Ecom%2Fprimo-explore%2Faccount%3Fvid%3DDUNEDIN&authenticationProfile=DUNEDIN%5FPDS";
 			}
 			
+			
 			window.location = target_url;
 		};
 	  
@@ -175,6 +186,59 @@ app.component('prmUserAreaAfter', {
 });
 
 
+/*sign in dropdown for full record view*/
+app.controller('prmLoginAlmaMashupAfterController', ['$element', '$scope', '$location',  function($element, $scope, $location) {
+	$scope.frvSignInAction = function() {
+		document.getElementById('frv_pre_signin_btn').style.display = 'none';
+		document.getElementById('frv_signin_dropdown').style.display = 'flex';
+	}
+	
+	$scope.frvSignIn = function () {
+		let signin_choice = document.getElementById("frv_signin_choice");
+		if (signin_choice !== null) {
+			signin_choice = signin_choice.value;
+			var start_full_url = "";
+			var end_full_url = "";
+			switch (signin_choice) {
+				case "UO":
+					start_full_url = "https://otago-staging.hosted.exlibrisgroup.com:443/shib/DUNEDIN/pds_main?func=load-login&calling_system=primo&institute=DUNEDIN&PDS_HANDLE=&url=https://otago-staging.hosted.exlibrisgroup.com:443/primo_library/libweb/pdsLogin?targetURL=";
+					end_full_url = "&from-new-ui=1&authenticationProfile=DUNEDIN%5FPDS"
+					break;
+				case "OP":
+					start_full_url = "https://otago-staging.hosted.exlibrisgroup.com:443/pds?func=load-login&calling_system=primo&institute=64OTAGO_DUNEDIN_INST&PDS_HANDLE=&url=https://otago-staging.hosted.exlibrisgroup.com:443/primo_library/libweb/pdsLogin?targetURL=";
+					end_full_url = "&from-new-ui=1&authenticationProfile=DUNEDIN%5FPDS";
+					break;
+				case "DHB":
+					start_full_url = "https://otago-staging.hosted.exlibrisgroup.com:443/pds?func=load-login&calling_system=primo&institute=64OTAGO_DUNEDIN_INST&PDS_HANDLE=&url=https://otago-staging.hosted.exlibrisgroup.com:443/primo_library/libweb/pdsLogin?targetURL=";
+					end_full_url = "&from-new-ui=1&authenticationProfile=DUNEDIN%5FPDS";
+					break;
+				case "HOC":
+					start_full_url = "https://otago-staging.hosted.exlibrisgroup.com:443/pds?func=load-login&calling_system=primo&institute=64OTAGO_DUNEDIN_INST&PDS_HANDLE=&url=https://otago-staging.hosted.exlibrisgroup.com:443/primo_library/libweb/pdsLogin?targetURL=";
+					end_full_url = "&from-new-ui=1&authenticationProfile=DUNEDIN%5FPDS";
+					break;
+				case "ULANZ":
+					start_full_url = "https://otago-staging.hosted.exlibrisgroup.com:443/pds?func=load-login&calling_system=primo&institute=64OTAGO_DUNEDIN_INST&PDS_HANDLE=&url=https://otago-staging.hosted.exlibrisgroup.com:443/primo_library/libweb/pdsLogin?targetURL=";
+					end_full_url = "&from-new-ui=1&authenticationProfile=DUNEDIN%5FPDS";
+					break;
+			}
+			
+			var current_url = $location.$$absUrl;
+			var target_url = start_full_url + current_url + end_full_url;
+			
+			window.location = target_url;
+		}
+	}
+}]);
+
+app.component('prmLoginAlmaMashupAfter', {
+  bindings: {
+    parentCtrl: '<'
+  },
+  controller: 'prmLoginAlmaMashupAfterController',
+  templateUrl: 'custom/DUNEDIN/html/prmLoginAlmaMashupAfter.html'
+});
+
+
 /* make "New Search" clear locked facets */
 app.controller('prmExploreMainAfterController', function($scope) {
 	setTimeout(function(){
@@ -184,7 +248,6 @@ app.controller('prmExploreMainAfterController', function($scope) {
 		// if we're on the new search page, clear all sticky facets and add review exclude facet
 		if (currentURL == newSearchURL || currentURL == newSearchURL2) {
 			var stickyFacets = $scope.$parent.$ctrl.searchService.facetService.getStickyFacets();
-			console.log("removing sticky facets");
 			for (var i = 0; i < stickyFacets.length; i++) {
 				$scope.$parent.$ctrl.searchService.facetService.removeStickyFacet(stickyFacets[i]);
 			}
@@ -192,18 +255,15 @@ app.controller('prmExploreMainAfterController', function($scope) {
 			//add reviews facet
 			var reviewFacet = {name: "rtype", type: "exclude", value: "reviews", displayedType: "exact", displayValue: "reviews", label: "Reviews", operation: "add", persistent: false, tooltip: "Remove Type Reviews"};
 			$scope.$parent.$ctrl.searchService.facetService.addStickyFacet(reviewFacet);
-			console.log("sticky review facet added");
 		}
 	}, 2500);	
 	
 	// convert review facet to sticky
 	if (window.location.href.indexOf("http:%2F%2Fmarvin.otago.ac.nz") > 0) {
-		console.log("entered from external search box.");
 		waitForElementToDisplay('prm-breadcrumbs div div div button prm-icon > md-icon', 1000);
 		
 		function waitForElementToDisplay(selector, time) {
 			if(document.querySelector(selector) !=null) {
-				console.log("facet element present, converting to sticky.");
 				var reviewFacetSelector = document.querySelector('[aria-label="Make this filter persistent throughout the session Reviews"]');
 				angular.element(reviewFacetSelector).triggerHandler('click');
 				return;
@@ -258,47 +318,6 @@ app.factory('getUserMsgs', function($http) {
 	}
 })
 
-/*app.controller('userWarning', function(getUserFines, getUserLoans, getUserRequests, getUserMsgs, $scope) {
-	$scope.hasFines = false; //default to off
-	$scope.hasOverdues = false;
-	$scope.hasRequests = false;
-	$scope.hasMsgs = false;
-	if ($scope.$parent.$parent.$ctrl.userName() != "") { //only request fines if the user is logged in
-		//fines warning
-		getUserFines.async().then(function(response) {
-			if (response.data.data.fines.fine.length > 0) {
-				$scope.hasFines = true;
-			}
-		})//.catch(() => {});
-		.catch(err => [err]);
-		//overdues warning
-		getUserLoans.async().then(function(response) {
-			$scope.hasOverdues = response.data.data.loans.hasAlerts;
-		})//.catch(() => {});
-		.catch(err => [err]);
-		//requests
-		getUserRequests.async().then(function(response) {
-			var holds = response.data.data.holds.hold;
-			if (holds.length > 0) {
-				for (var i = 0; i < holds.length; i++) {
-					if (holds[i].available == "Y") {
-						$scope.hasRequests = true;
-						break;
-					}
-				}
-			}
-			// $scope.hasRequests = response.data.data.loans.hasAlerts;
-		})//.catch(() => {});
-		.catch(err => [err]);
-		//messages
-		getUserMsgs.async().then(function(response) {
-			if (response.data.data.blocksmessages.blockmessage.length > 0) {
-				$scope.hasMsgs = true;
-			}
-		})//.catch(() => {});
-		.catch(err => [err]);
-	}
-});*/
 app.controller('userWarning', function(getUserFines, getUserLoans, getUserRequests, getUserMsgs, $scope) {
 	$scope.hasFines = false; //default to off
 	$scope.hasOverdues = false;
@@ -344,6 +363,45 @@ app.controller('userWarning', function(getUserFines, getUserLoans, getUserReques
 	}
 });
 
+
+// sign out buttons
+app.factory('getSignoutInfo', function($http) {
+	return {
+		async: function() {
+			return $http.get('/primo_library/libweb/webservices/rest/v1/myaccount/personal_settings'); //returns promise
+		}
+	}
+});
+
+app.controller('signout', function(getSignoutInfo, $scope, $http) {
+	$scope.shib = false; //default to off
+	$scope.notShib = false; //default to off
+	
+	if ($scope.$parent.$parent.$ctrl.userName() != "" && typeof($scope.$parent.$parent.$ctrl.userName()) != "undefined") { //only request fines if the user is logged in
+		try {
+			$scope.notShib = true; //show a sign out button
+			getSignoutInfo.async().then(function(response) {
+				var patronCode = response.data.data.patronstatus[0].registration[0].institution[0].patronstatuscode;
+				var shibCodes = ['STAFF', 'STUDENTDISTANCE', 'STUDENT', 'EXTERNAL'];
+				if (shibCodes.includes(patronCode)) {
+					//check to see if behind zen
+					$http.get('https://api.cognitive.microsoft.com/bing/v7.0/search').then(function(response) {
+						//success: it'll never succeed but we need to check internet access
+					}, function(data) {
+						//error: as expected
+						if (data.status == -1) { //status is 401 if not going through zen
+							// behind zen
+							$scope.notShib = false;
+							$scope.shib = true;
+						}
+					})
+				}
+			})
+		} catch(e) {}
+	}
+});
+
+
 /*user favorites area. Adds back to search link*/
 app.controller('prmFavoritesToolBarAfterController', function($scope, $compile, $http) {
 	$http.get("/primo_library/libweb/webservices/rest/v1/myaccount").then(function(){
@@ -378,11 +436,11 @@ app.controller('prmFavoritesToolBarAfterController', function($scope, $compile, 
 		}
 		
 		//set browser back button to previous search
-		window.onpopstate = function() {
+		/*window.onpopstate = function() {
 			if (history.state == null) {
 				history.pushState({searchHist: "Library Search | Ketu"}, "Library Search | Ketu", mostRecentSearch);
 			}
-		}
+		}*/
 	});
 });
 
@@ -442,6 +500,23 @@ app.controller('prmAccountOverviewAfterController', ['$element', '$scope', '$com
 	} catch (e) {
 		console.log("error getting search history: " + e);
 	}
+	
+	//only show overdue icons when items are overdue (required due to bug showing historic loans as overdue)
+	$http.get('/primo_library/libweb/webservices/rest/v1/myaccount/loans').then(function(response) {
+		if (response.data.data.loans.hasAlerts == true) {
+			var overdueIconPrm = document.createElement("prm-icon");
+			overdueIconPrm.setAttribute("icon-type", "svg");
+			overdueIconPrm.setAttribute("svg-icon-set", "primo-ui");
+			overdueIconPrm.setAttribute("icon-definition", "timer");
+			overdueIconPrm.setAttribute("class", "prm-warn");
+			overdueIconPrm.setAttribute("style", "display: flex;");
+						
+			$compile(overdueIconPrm)($scope);
+			
+			var attachPoint = document.querySelector('#accountoverview md-tab-item.md-tab:nth-child(2) > div:nth-child(1)');
+			attachPoint.appendChild(overdueIconPrm);
+		}
+	});
 	
 	// show the fines warning icon
 	$http.get('/primo_library/libweb/webservices/rest/v1/myaccount/fines').then(function(response) {
@@ -531,7 +606,11 @@ app.component('prmSearchBarAfter', {
 
 /*create new sort by dropdown*/
 app.controller('prmSearchResultListAfterController', ['$scope', '$compile', function($scope, $compile) {
-	if (window.location.href.indexOf("primo-explore/favorites?") == -1) {
+	//hide the sort option under certain circumstances
+	var showSort = true;
+	if (window.location.href.indexOf("primo-explore/favorites?") > 1) { showSort = false; } 
+	if (window.location.href.indexOf('primo-explore/jsearch?') > 1 && window.location.href.indexOf('&journals=letter,') > 1) { showSort = false; }
+	if (showSort == true) {
 		var sortBy = document.createElement('prm-search-result-sort-by');
 		$compile(sortBy)($scope);
 		
@@ -592,9 +671,8 @@ app.component('prmSearchResultListAfter', {
 
 
 
-/*direct linking*/
-/*prmBriefResultAfter*/
-app.controller('prmBriefResultAfterController', ['$element', '$scope', '$compile', function($element, $scope, $compile) {
+/*direct linking august*/
+/*app.controller('prmBriefResultAfterController', ['$element', '$scope', '$compile', function($element, $scope, $compile) {
 	var ctrl = this;
 
 	ctrl.$onInit = function() {
@@ -612,13 +690,15 @@ app.controller('prmBriefResultAfterController', ['$element', '$scope', '$compile
 		if (($scope.$parent.$ctrl.item.pnx.delivery.delcategory[0] != 'Alma-P' && $scope.$parent.$ctrl.resourceTypeForDisplay != 'mediatype.multiplever')) {
 		
 			if (typeof($scope.$parent.$ctrl._zoteroParamsString) != "undefined") {
-				//do this for hathi trust titles
-				if ($scope.$parent.$ctrl.item.link.openurlfulltext.indexOf("hathi_trust") > 0) {
-					setTimeout(function(){
-						var hathiTitle = $scope.$parent.$parent.$ctrl.$element[0].children[0].children[3].children[0].children[1].children[0].children[0];
-						hathiTitle.setAttribute("style", "display: inline-block;");
-						hathiTitle.children[1].textContent = "Multiple volumes exist";
-					}, 500);
+				//do this for hathi trust titles (not in favorites)
+				if (window.location.href.indexOf('/primo-explore/favorites?') == -1) {
+					if ($scope.$parent.$ctrl.item.link.openurlfulltext.indexOf("hathi_trust") > 0) {
+						setTimeout(function(){
+							var hathiTitle = $scope.$parent.$parent.$ctrl.$element[0].children[0].children[3].children[0].children[1].children[0].children[0];
+							hathiTitle.setAttribute("style", "display: inline-block;");
+							hathiTitle.children[1].textContent = "Multiple volumes exist";
+						}, 500);
+					}
 				}
 			}
 		
@@ -683,6 +763,120 @@ app.controller('prmBriefResultAfterController', ['$element', '$scope', '$compile
 			}
 		}
 	};
+}]);*/
+
+/*direct linking november*/
+app.controller('prmBriefResultAfterController', ['$http', '$element', '$scope', '$compile', function($http, $element, $scope, $compile) {
+    var ctrl = this;
+
+    ctrl.$onInit = function() {
+		ctrl.$element = $element;
+    };
+
+    ctrl.$postLink = function() {
+		ctrl.createDirectLink();
+    };
+
+    ctrl.createDirectLink = function() {
+		var parentElement = ctrl.$element.parent();
+		var container = angular.element(parentElement.children()[0]);
+		
+		//Alma-E stuff needs a direct link if it's nor frbr
+		if (($scope.$parent.$ctrl.item.pnx.delivery.delcategory[0] != 'Alma-P' && $scope.$parent.$ctrl.resourceTypeForDisplay != 'mediatype.multiplever')) {
+			
+			//change journal to e-journal
+			if ($scope.$parent.$ctrl.item.pnx.display.type[0] == "journal") {
+				var mediaType = parentElement.parent().parent().children()[1].firstElementChild;
+				mediaType.textContent = "e-Journal";
+			}
+			
+			if ($scope.$parent.$ctrl.item['@id'].indexOf("hathi_trust") > -1 && window.location.href.indexOf('/primo-explore/favorites?') == -1) {
+				setTimeout(function(){
+					var hathiTitle = $scope.$parent.$parent.$ctrl.$element[0].children[0].children[3].children[0].children[1].children[0].children[0];
+					hathiTitle.setAttribute("style", "display: inline-block;");
+					hathiTitle.children[1].textContent = "Multiple volumes exist";
+				}, 500);
+			}
+			
+			function directLinks() {
+				if (typeof($scope.$parent.$ctrl.item.delivery) != "undefined") {
+					let title_dl = angular.element(container);
+					var url = $scope.$parent.$ctrl.item.delivery.GetIt1[0].links[0].link;
+					if ($scope.$parent.$ctrl.item.delivery.GetIt1[0].links[0].link.indexOf('sandbox01-ap.alma.exlibrisgroup.com') >= 0) {
+						url = url.replace('sandbox01-ap.alma.exlibrisgroup.com', 'ap01.alma.exlibrisgroup.com');
+					}
+					var uoTitle = $scope.$parent.$ctrl.item.pnx.display.title[0];
+					uoTitle = uoTitle.replace(',', '%2C');
+					uoTitle = uoTitle.replace('\'', '%27');
+					
+					var dlUrl = 'http://ezproxy.otago.ac.nz/login?url=http://www.otago.ac.nz/library/primo/testing/viewresource.php?resource=' + escape(url) + '&uoTitle=' + uoTitle;
+
+					title_dl[0].setAttribute("ng-click", "$event.stopPropagation()");
+
+					$compile(title_dl)($scope.$parent);
+					
+					if (($scope.$parent.$ctrl.item.delivery.GetIt1[0].links[0].link.indexOf('ap01.alma.exlibrisgroup.com') >= 0) || ($scope.$parent.$ctrl.item.delivery.GetIt1[0].links[0].link.indexOf('sandbox01-ap.alma.exlibrisgroup.com') >= 0)) {
+						$scope.$parent.$ctrl.deepLink = dlUrl;
+						title_dl[0].setAttribute("onclick", "window.open('"+dlUrl+"', '_blank')");
+						title_dl[0].href = "";
+					} else {
+						$scope.$parent.$ctrl.deepLink = url;
+						title_dl[0].setAttribute("onclick", "window.open('"+url+"', '_blank')");
+					}
+					
+					if (window.location.href.indexOf("primo-explore/fulldisplay?") == -1) {
+						// create "View Details"
+						var viewDetails_div = document.createElement('div');
+						viewDetails_div.setAttribute("id", "view_dtls_div");
+								
+						var viewDetails_btn = document.createElement('button');
+						viewDetails_btn.setAttribute("id", "view_deets");
+						viewDetails_btn.setAttribute("class", "neutralized-button arrow-link-button md-button md-primoExplore-theme md-ink-ripple");
+						viewDetails_btn.setAttribute("type", "button");
+						viewDetails_btn.setAttribute("prm-brief-internal-button-marker", "");
+						// viewDetails_btn.setAttribute("ng-click", "$ctrl.handleAvailability($index, 'expand');$event.preventDefault()");
+						viewDetails_btn.setAttribute("title", "View details");
+						viewDetails_btn.setAttribute("aria-label", "View online button");
+
+						var viewDetails_content = document.createElement('span');
+						viewDetails_content.setAttribute("class", "button-content");
+						viewDetails_content.textContent = "View details";
+								
+						var chevIcon_prm = document.createElement('prm-icon');
+						chevIcon_prm.setAttribute("link-arrow", "");
+						chevIcon_prm.setAttribute("aicon-type", "svg");
+						chevIcon_prm.setAttribute("svg-icon-set", "primo-ui");
+						chevIcon_prm.setAttribute("icon-definition", "chevron-right");
+								
+						viewDetails_btn.appendChild(viewDetails_content);
+						viewDetails_btn.appendChild(chevIcon_prm);
+						viewDetails_div.appendChild(viewDetails_btn);
+						
+						$compile(viewDetails_div)($scope.$parent);
+						
+						$scope.$parent.$parent.$ctrl.$element[0].children[0].lastChild.appendChild(viewDetails_div);
+						var arrResultItem = document.getElementsByClassName("list-item-primary-content result-item-primary-content layout-row");
+						var arrResultItemBG = document.getElementsByClassName("list-item-wrapper");
+						for (var i = 0; i < arrResultItem.length; i++) {
+							arrResultItem[i].style.visibility = "visible";
+							arrResultItemBG[i].style.borderBottomStyle = "solid";
+						}
+					}
+				} else {
+					var arrResultItem = document.getElementsByClassName("list-item-primary-content result-item-primary-content layout-row");
+					var arrResultItemBG = document.getElementsByClassName("list-item-wrapper");
+					if (arrResultItem[0].style.visibility != "hidden") {
+						for (var i = 0; i < arrResultItem.length; i++) {
+							arrResultItem[i].style.visibility = "hidden";
+							arrResultItemBG[i].style.borderBottomStyle = "none";
+						}
+					}
+					window.setTimeout(directLinks, 100);
+				}
+			}
+			directLinks();
+		}
+    };
 }]);
 
 app.component('prmBriefResultAfter', {
@@ -693,7 +887,7 @@ app.component('prmBriefResultAfter', {
 });
 
 /*prmSearchResultAvailabilityLineAfter*/
-app.controller('prmSearchResultAvailabilityLineAfterController', ['$element', '$scope', '$compile', function($element, $scope, $compile) {
+app.controller('prmSearchResultAvailabilityLineAfterController', ['$element', '$scope', '$compile', '$http', function($element, $scope, $compile, $http) {
     var ctrl = this;
 
     ctrl.$onInit = function() {
@@ -706,26 +900,74 @@ app.controller('prmSearchResultAvailabilityLineAfterController', ['$element', '$
 
     ctrl.createDirectLink = function() {
 		let parentElement = ctrl.$element.parent();
-		//hides "view details" for electronic records
-		if ($scope.$parent.$ctrl.delCategories[0] != "Alma-P") {
-			// console.log($scope.$parent.$ctrl);
+		var delCat = "";
+		if (typeof($scope.$parent.$ctrl.delCategories[0]) != "undefined") {
+			delCat = $scope.$parent.$ctrl.delCategories[0];
+		}
+		try {
+			delCat = $scope.$parent.$ctrl.delCategories()[0];
+		} catch (e) {} //Nov release uses a function
+		
+		if (delCat != "Alma-P") {
 			$scope.$parent.$ctrl.$element[0].setAttribute("style", "display:none;");
 		}
 		
-		//add [Floor x] to Central locations. Note: doesnt work in IE
-		Primo.records.then(function () {
-			if ($scope.$parent.$ctrl.delCategories[0] == "Alma-P") {
-				if ($scope.$parent.$ctrl.libraryCode == "Central Library" && ($scope.$parent.$ctrl.subLocation == "Main" || $scope.$parent.$ctrl.subLocation == "Books")) {
-					var callNum = $scope.$parent.$ctrl.callNumber;
-					if (callNum.charAt(0).match(/[A-K]/gi)) {
-						$scope.$parent.$ctrl.subLocation = "Books [Floor 1]";
+		if (delCat == "Alma-P") {
+			function cenFloorInfo() {
+				if (typeof($scope.$parent.$ctrl.libraryCode) != "undefined") {
+					var cenFloor = "";
+					
+					var objCenFloor = document.createElement("span");
+					objCenFloor.setAttribute("class", "cenFloor");
+					objCenFloor.textContent = cenFloor;
+					var target = $scope.$parent.$ctrl.$element[0].children[0].children[0].children[1].firstChild.firstChild;
+					target.insertBefore(objCenFloor, target.children[1].nextSibling);
+					target.children[2].style.display = "none";
+						
+					var i = 0;
+					
+					function cenBooksFloorLoop() {
+						window.setTimeout(function(){
+							i++;
+							if ($scope.$parent.$ctrl.libraryCode == "Central Library" && ($scope.$parent.$ctrl.subLocation == "Main" || $scope.$parent.$ctrl.subLocation == "Books")) {
+								var callNum = $scope.$parent.$ctrl.callNumber;
+								cenFloor = "";
+								if (callNum.charAt(0).match(/[A-K]/gi)) {
+									cenFloor = "[Floor 1]";
+								}
+								if (callNum.charAt(0).match(/[M-Z]/gi)) {
+									cenFloor = "[Floor 2]";
+								}
+
+								if (cenFloor != "") {
+									target.children[2].style.display = "inline";
+									target.children[2].textContent = cenFloor;
+									// sometimes the call number is removed, so add it back in
+									if (target.children.length == "3") {
+										target.children[2].textContent = target.children[2].textContent + " " + callNum;
+									}
+								} else {
+									target.children[2].style.display = "none";
+									target.children[2].textContent = cenFloor;
+									// sometimes the call number is removed, so add it back in
+									if (target.children.length == "3") {
+										target.children[2].textContent = target.children[2].textContent + " " + callNum;
+									}
+								}
+							}
+							
+							if (i < 20) {
+								cenBooksFloorLoop();
+							}
+						}, 500);
 					}
-					if (callNum.charAt(0).match(/[M-Z]/gi)) {
-						$scope.$parent.$ctrl.subLocation = "Books [Floor 2]";
-					}
+					cenBooksFloorLoop();
+				} else {
+					window.setTimeout(cenFloorInfo, 100);
 				}
 			}
-		});
+			cenFloorInfo();
+		}
 	};
 }]);
 
@@ -745,7 +987,6 @@ angular.module('viewCustom').component('prmFullViewAfter', {
         controller: ['sectionOrdering', '$http', '$compile', '$scope', function(sectionOrdering, $http, $compile, $scope) {
         	var ctrl = this;
 			
-			// console.log(document.getElementsByTagName("html")[0].style);
 			document.getElementsByTagName("html")[0].style.overflowY = "auto";
         	//remove "sign in for request options" for non-physical items & redirect openurl entries
 			if (ctrl.parentCtrl.item.delivery.GetIt1[0].category != "Alma-P") {
@@ -835,9 +1076,7 @@ angular.module('viewCustom').component('prmFullViewAfter', {
 			ctrl.$onInit = function() {
 				try {
 					sectionOrdering.orderSections(ctrl.parentCtrl.services);
-				} catch (e) {
-					// console.log(e.message);
-				};
+				} catch (e) { };
 			};
         }]
 });
@@ -930,7 +1169,7 @@ app.component('prmFinesOverviewAfter', {
 });
 
 /** add fines payment button (fines main) **/
-app.controller('prmFinesAfterController', ['$element', '$scope', '$compile', '$http', function($element, $scope, $compile, $http) {
+/*app.controller('prmFinesAfterController', ['$element', '$scope', '$compile', '$http', function($element, $scope, $compile, $http) {
 	var ctrl = this;
 
 	ctrl.$onInit = function() {
@@ -990,6 +1229,82 @@ app.controller('prmFinesAfterController', ['$element', '$scope', '$compile', '$h
 
 		parentElement[0].parentNode.append(createDiv);
 	};
+}]);*/
+
+app.controller('prmFinesAfterController', ['$element', '$scope', "$compile", "$http", function($element, $scope, $compile, $http) {
+    var ctrl = this;
+
+    ctrl.$onInit = function() {
+		ctrl.$element = $element;
+    };
+
+    ctrl.$postLink = function() {
+		ctrl.insertPayNowBtn();
+    };
+
+    ctrl.insertPayNowBtn = function() {
+		let parentElement = ctrl.$element.parent();
+		let container = angular.element(parentElement.children()[0].children[0]);
+		try {
+			document.getElementById("pay_fines_btn_main").style.visibility = 'hidden';
+		} catch (e) {
+			console.log(e);
+		}
+		
+		angular.element(container[0].children[0]).append(ctrl.$element.children()[0]);
+
+		
+		// Primo.user.then(function(user) {
+		$http.get('/primo_library/libweb/webservices/rest/v1/myaccount/fines').then(function(user) {
+			if (user.data.data.fines.fine.length > 0) {
+				try {
+					document.getElementById("pay_fines_btn_main").style.visibility = 'visible';
+				} catch (e) {
+					console.log(e);
+				}
+				$scope.payFines = function () {
+					//open window now to avoid pop-up blockers
+					window.open('', 'pay_fines_window');
+					//after username returned, set the hidden element in the "open fines page" form
+					var fobj = document.getElementById('pay_fines_uname_overview');
+					var uid = $scope.$parent.$parent.$parent.$parent.$parent.$ctrl.skipToService.userSessionManagerService.areaName;
+					fobj.userId.value = uid;
+					fobj.submit();
+				};
+			} else {
+				document.getElementById('pay_fines_btn_main').disabled = true;
+			}
+		});
+		
+		//also add in fines info link
+		var createDiv = document.createElement("div");
+		var createA = document.createElement("a");
+		var createLinkText = document.createTextNode("Fine rates");
+		var createPrmIconOut = document.createElement("prm-icon");
+		
+		createDiv.setAttribute("class", "fine_rates_div");
+		
+		createA.setAttribute("href", "http://www.otago.ac.nz/library/quicklinks/borrowing/index.html#rates");
+		createA.setAttribute("aria-label", "Fine rates");
+		createA.setAttribute("target", "_blank");
+		
+		//createPrmIconOut.setAttribute("ng-if", "");
+		createPrmIconOut.setAttribute("class", "cust_prm_out");
+		createPrmIconOut.setAttribute("icon-type", "svg");
+		createPrmIconOut.setAttribute("svg-icon-set", "primo-ui");
+		createPrmIconOut.setAttribute("icon-definition", "open-in-new");
+		
+		$compile(createPrmIconOut)($scope);
+		
+		createA.appendChild(createLinkText);
+		createA.appendChild(createPrmIconOut);
+		
+		createDiv.appendChild(createA);
+
+		angular.element(parentElement[0].parentNode).append(createDiv);
+		
+		
+    };
 }]);
 
 app.component('prmFinesAfter', {
@@ -4318,7 +4633,7 @@ $export($export.S, 'Math', {
   }
 });
 },{"./_export":32,"./_math-sign":61}],158:[function(require,module,exports){
-// 20.2.2.17 Math.hypot([value1[, value2[, � ]]])
+// 20.2.2.17 Math.hypot([value1[, value2[, Ö ]]])
 var $export = require('./_export')
   , abs     = Math.abs;
 
@@ -9011,6 +9326,26 @@ app.run(function($rootScope, $window) {
 		$window.ga('send', 'pageview', {location: urlPath});
 		$window.ga('b.send', 'pageview', {location: urlPath});
 	});
+});
+
+/** Add Google Translate **/
+app.run(function ($rootScope, $window) {
+	var gtDiv = document.createElement("div");
+	gtDiv.setAttribute("id", "google_translate_element");
+	document.body.appendChild(gtDiv);
+	
+	var gtSrc = document.createElement("script");
+	gtSrc.setAttribute("type", "text/javascript");
+	gtSrc.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+	document.body.appendChild(gtSrc);
+	
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+	}
+	
+	setTimeout(function(){
+		googleTranslateElementInit();
+	}, 1000);
 });
 
 /* rest of GA */
