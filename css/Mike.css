@@ -1,3 +1,4 @@
+/*start: Mikes stuff*/
 /*remove tags*/
 #tags,[aria-label="Tags"],.md-button[aria-label="nui.mainmenu.label.tags"],.md-button[aria-label="?TIQUETTES"],md-card.transparent-card:nth-child(2) {display: none;}
 
@@ -26,7 +27,8 @@
 #browseSearch, 
 #clearSearch,
 [translate="mainmenu.label.Browse"], 
-[translate="nui.mainmenu.description.Browse"] {display: none;}/*when screen is smaller and menu options appear under elipses*/
+[translate="nui.mainmenu.description.Browse"],
+[translate="nui.mainmenu.label.browse"] {display: none;}/*when screen is smaller and menu options appear under elipses*/
 
 /*Remove "ENGLISH" from under username*/
 prm-topbar > div > prm-user-area > button:nth-child(2) > div > span.user-language.text-uppercase {display: none;}
@@ -205,6 +207,9 @@ prm-services-page prm-user-area {
 }
 prm-services-page prm-search-bookmark-filter {
 	display: none !important;
+}
+prm-services-page div.full-view-section-content prm-full-view-service-container {
+	display: none;
 }
 /*change colour of title in full result view*/
 #brief > prm-full-view-service-container > div.section-body > prm-brief-result-container > div.list-item-primary-content.result-item-primary-content.layout-row > div.result-item-text.layout-fill.layout-column.flex > prm-brief-result > h3 > a > span > prm-highlight > span { 
@@ -513,10 +518,6 @@ prm-alma-mashup .mashup-iframe {
 /*hide rss feed icon in saved searches area*/
 [aria-label="Set an RSS for this search"] {
 	display: none;
-}
-/*minor alignment of view details button*/
-#view_deets {
-	margin-top: 0.5em;
 }
 /*adjust "sort by" in favourites*/
 prm-favorites md-tabs-wrapper {
@@ -895,7 +896,6 @@ prm-personal-info > div.layout-wrap.layout-align-center-start.layout-row md-card
 prm-search-bookmark-filter a:hover {
 	box-shadow: none;
 }
-
 /*make the lib card hover behave like the other icons*/
 #library_card_button_not_signed_in:hover, #library_card_button > button > prm-icon:hover {
 	background-color: rgba(0,0,0,.1);
@@ -928,7 +928,6 @@ prm-advanced-search div.date-range-inputs.animate-input.layout-row > md-input-co
 prm-search-result-thumbnail-container > div > img {
 	width: 64px !important;
 }
-
 /*Google translate*/
 #gtWrapper {
 	width: 100%;
@@ -977,3 +976,4 @@ prm-search-result-thumbnail-container > div > img {
 		display: none;
 	}
 }
+/*end: Mikes stuff*/
