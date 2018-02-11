@@ -328,4 +328,6 @@ button.mobile-menu-button {display: none;}
 min-height: 0.5em;
 }
 
+.md-primoExplore-theme a:hover {box-shadow:none; background-color:none;}
+
 /*end Merrin's code 13/12/2017*/
