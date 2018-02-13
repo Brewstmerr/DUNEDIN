@@ -17,7 +17,7 @@ prm-topbar {border-top: 13px solid #f9c000;}
 prm-atoz-search-bar {background:#79838d;}
 
 /*make logo area bit better mjb*/
-prm-logo .product-logo{cursor:pointer;height:100%;padding:0}
+prm-logo .product-logo{cursor:pointer;height:100%;padding:0; background: yellow;}
 
 /*stop nav from sliding under logo mjb*/
 prm-topbar prm-logo{z-index:10;height:100%;max-width:454px;}
@@ -335,7 +335,7 @@ button.mobile-menu-button {display: none;}
 min-height: 0.5em;
 }
 
-a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none; background:none;}
+a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 
 
 /*end Merrin's code 12/02/2018*/

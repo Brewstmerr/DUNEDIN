@@ -1,0 +1,26 @@
+<div ng-if="!$parent.$ctrl.isLoggedIn() &amp;&amp; $parent.$ctrl.index == $parent.$ctrl.getIndexFullView()" class="bar alert-bar layout-align-center-center layout-row" layout="row" layout-align="center center">
+	<span translate="getit.signin_link.sign_in" class="margin-right-small">Sign in for request and borrowing options</span>
+	<button id="frv_pre_signin_btn" class="button-with-icon zero-margin md-button md-primoExplore-theme md-ink-ripple" type="button" ng-if="!$parent.$ctrl.isLoggedIn" ng-click="frvSignInAction();" aria-label="Sign in">
+		<prm-icon icon-type="svg" svg-icon-set="primo-ui" icon-definition="sign-in">
+			<md-icon md-svg-icon="primo-ui:sign-in" aria-label="icon-sign-in" class="md-primoExplore-theme" aria-hidden="true">
+				<svg id="sign-in_cache39" width="100%" height="100%" viewBox="0 0 24 24" y="192" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+					<path d="M10,17.25V14H3V10H10V6.75L15.25,12L10,17.25M8,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H8A2,2 0 0,1 6,20V16H8V20H17V4H8V8H6V4A2,2 0 0,1 8,2Z"></path>
+				</svg>
+			</md-icon>
+		</prm-icon>
+		<span translate="eshelf.signin.title">Sign in</span>
+	</button>
+
+
+	<div layout="row" id="frv_signin_dropdown" style="display:none">
+		<select id="frv_signin_choice" name="frv_signin_url" ng-model="data.frv_signin_url" ng-change="frvSignIn()"  ng-init="data.frv_signin_url='UO'">
+			<option value="UO" selected="selected">University</option>
+			<option value="HOC">Hocken</option>
+			<option value="OP">Polytechnic</option>
+			<option value="ULANZ">ULANZ</option>
+		</select>
+		<button type="button" id="frv_signin_btn" ng-click="frvSignIn()">Sign in</button>
+	</div>
+	
+	
+</div>

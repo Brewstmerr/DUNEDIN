@@ -124,7 +124,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       parentCtrl: '<'
     },
     controller: 'prmUserAreaAfterController',
-    templateUrl: 'custom/DUNEDIN/html/prmUserAreaAfter.html'
+    //templateUrl: '../html/prmUserAreaAfter.html'
+	  templateUrl: '../primo-explore/custom/DUNEDIN/html/prmUserAreaAfter.html'
   });
 
   /*sign in dropdown for full record view*/
@@ -176,7 +177,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       parentCtrl: '<'
     },
     controller: 'prmLoginAlmaMashupAfterController',
-    templateUrl: 'custom/DUNEDIN/html/prmLoginAlmaMashupAfter.html'
+    templateUrl: '../primo-explore/custom/DUNEDIN/html/prmLoginAlmaMashupAfter.html'
   });
 
   /* make "New Search" clear locked facets */
@@ -1100,7 +1101,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       parentCtrl: '<'
     },
     controller: 'prmFinesOverviewAfterController',
-    templateUrl: 'custom/CENTRAL_PACKAGE/html/prmFinesOverviewAfter.html'
+    templateUrl: '../primo-explore/custom/DUNEDIN/html/prmFinesOverviewAfter.html'
   });
 
   app.controller('prmFinesAfterController', ['$element', '$scope', "$compile", "$http", function ($element, $scope, $compile, $http) {
@@ -1181,7 +1182,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       parentCtrl: '<'
     },
     controller: 'prmFinesAfterController',
-    templateUrl: 'custom/CENTRAL_PACKAGE/html/prmFinesAfter.html'
+    templateUrl: '../primo-explore/custom/DUNEDIN/html/prmFinesAfter.html'
   });
 
   /** primo-explore code **/
