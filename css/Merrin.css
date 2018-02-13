@@ -1,3 +1,10 @@
+/*logo for mobile mjb*/
+@media screen and (max-width:768px) {
+	.product-logo {
+		position:absolute; top:0; left:0;height:67px;width: 54px; background:url(../imgs/mobile_DUNEDIN.png)no-repeat;margin-top:-13px;
+	}
+}
+
 html,body {background: #FFF;color: #333;}
 
 /*Change top bar from up.case to low.case and for buttons etc mjb*/
@@ -14,7 +21,7 @@ prm-logo .product-logo{cursor:pointer;height:100%;padding:0}
 
 /*stop nav from sliding under logo mjb*/
 prm-topbar prm-logo{z-index:10;height:100%;max-width:454px;}
-prm-logo .logo-image,prm-logo img{max-height:138px;margin-top:-13px;}
+prm-logo .logo-image, prm-logo img{max-height:138px;margin-top:-13px;}
 prm-main-menu[menu-type="menu"] .top-nav-bar-links {margin-left: 2px;}
 
 /*apply min height to top bar so images show up mjb*/
@@ -143,7 +150,7 @@ prm-library-card-menu > button > prm-icon {border-radius: 50%;padding: 0.14em 0.
 #user_warnings{position:absolute;right:-0.7em;top:4.3em;display:flex;transform:scale(.75,.75);width: 6em;}.usermenu_warn{display:flex;padding-right:.2em;width:24px}#fines_warning_icon_div > md-icon{background-color:tomato;border-radius:50%;min-height:18px;min-width:18px;height:20px;width:20px;margin-top:2px;}#overdue_warning{margin-left:-1.3em}#overdue_warning_white_background{height:1em;width:1em;background-color:#FFF;border-radius:50%;margin-top:.4em}#request_warning{margin-left:-1.2em}#request_background{margin-left:-0.2em;padding-top:.4em;padding-bottom:.4em}#msg_warning{margin-left:-0.7em}
 
 /*the Fines button mjb*/
-#pay_fines_btn_main,#pay_fines_btn_overview{width:65px;height:25px;border-radius:3px;color:#f3f3f3;background:url(../img/CC_v3.png) 91% center no-repeat #79838d;text-align:left;border:none}
+#pay_fines_btn_main,#pay_fines_btn_overview{width:65px;height:25px;border-radius:3px;color:#f3f3f3;background:url(../imgs/CC_v3.png)center no-repeat #79838d;text-align:left;border:none}
 
 /*position Fines button on Overview page mjb*/
 #pay_fines_btn_wrapper_overview{position:relative;top:10px;margin-left:75%}
@@ -241,7 +248,7 @@ prm-search-bar .simple-search-wrapper .search-options prm-tabs-and-scopes-select
 prm-logo img {display: none;}
 
 /*logo for mobile mjb*/
-.product-logo {position:absolute; top:0; left:0;height:67px;width:54px; background:url(/primo-explore/custom/DUNEDIN/img/mobile_DUNEDIN.png)no-repeat;margin-top:-13px;}
+.product-logo {position:absolute; top:0; left:0;height:67px;width:54px; background:url(custom/DUNEDIN/imgs/mobile_DUNEDIN.png);margin-top:-13px;}
     
 #mobile_menu {display: none;}
 
@@ -328,6 +335,7 @@ button.mobile-menu-button {display: none;}
 min-height: 0.5em;
 }
 
-.md-primoExplore-theme a:hover {box-shadow:none; background-color:none;}
+a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none; background:none;}
 
-/*end Merrin's code 13/12/2017*/
+
+/*end Merrin's code 12/02/2018*/
