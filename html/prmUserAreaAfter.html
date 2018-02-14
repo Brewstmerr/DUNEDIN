@@ -12,7 +12,7 @@
 	
 	<prm-authentication id="sign_out_button" class="sign_out_buttonV" layout="flex" [is-logged-in]="$parent.$ctrl.userName().length > 0" ng-show="$parent.$ctrl.userName().length > 0"></prm-authentication>
 	
-	<prm-search-bookmark-filter ng-show="$ctrl.displayFavorites" class="user-area-two-buttons" layout-align="end center" layout="row" flex="noshrink"aria-hidden="false"></prm-search-bookmark-filter>
+	<prm-search-bookmark-filter ng-show="$ctrl.displayFavorites" class="user-area-two-buttons" layout-align="end center" layout="row" flex="noshrink" aria-hidden="false"></prm-search-bookmark-filter>
 	
 	<div id="library_card_button_not_signed_in" ng-show="$parent.$ctrl.userName().length == 0" ng-click="signIn('card')">
 		<button class="button-with-icon zero-margin md-button md-primoExplore-theme md-ink-ripple" aria-label="Go to my account">
@@ -22,7 +22,7 @@
 				</svg>
 			</md-icon>
 		</button>
-		<md-tooltip md-delay="400" md-direction="bottom" class="md-primoExplore-theme _md-show" role="tooltip" id="library_card_button_not_signed_in_tooltip">
+		<md-tooltip md-delay="400" md-direction="bottom" class="md-primoExplore-theme _md-show" role="tooltip" id="library_card_button_not_signed_in_tooltip_uno">
 				<span>My Library account</span>
 		</md-tooltip>
 	</div>
@@ -38,7 +38,7 @@
 	<div id="user_warnings" ng-controller="userWarning">
 		<div class="usermenu_warn" ng-show="hasFines">
 			<div id="fines_warning_icon_div">
-				<md-icon id="fine_warning" icon-type="svg" md-svg-src="../imgs/fines_warn.svg" class="md-primoExplore-theme"></md-icon>
+				<md-icon id="fine_warning" icon-type="svg" md-svg-src="../img/fines_warn.svg" class="md-primoExplore-theme"></md-icon>
 			</div>
 		</div>
 		<div class="usermenu_warn" ng-show="hasOverdues">
@@ -46,7 +46,7 @@
 			<prm-icon id="overdue_warning" class="prm-warn" icon-definition="timer" icon-type="svg" svg-icon-set="primo-ui"></prm-icon>
 		</div>
 		<div class="usermenu_warn" ng-show="hasRequests">
-			<img id="request_background" src="../imgs/bell_background.png"></img>
+			<img id="request_background" src="../img/bell_background.png" alt="alert"/>
 			<prm-icon id="request_warning" class="prm-positive" icon-definition="bell" icon-type="svg" svg-icon-set="primo-ui"></prm-icon>
 		</div>
 		<div class="usermenu_warn" ng-show="hasMsgs">
