@@ -80,7 +80,7 @@
 .service-form-static-panel button.button-confirm prm-icon+span._md-focused:not([disabled]),
 .service-form-static-panel button.button-confirm prm-icon svg path._md-focused:not([disabled]) {
     color: #333;
-    background-color: rgba(109,132,45, 0.1);
+    background-color: #dfa000;
 }
 
 .light-on-dark-dialog .md-button.button-confirm,

@@ -157,8 +157,8 @@ prm-library-card-menu > button > prm-icon {border-radius: 50%;padding: 0.14em 0.
 #request_warning{margin-left:-1.2em}#request_background{margin-left:-0.2em;padding-top:.4em;padding-bottom:.4em}
 #msg_warning{margin-left:-0.7em}
 
-/*make the dollar sign appear - it's not currently for me in localhost for some reason mjb*/
-#fine_warning {background:url(../img/fines_warn.svg) no-repeat;}
+/*make the dollar sign appear - it's not currently for me in localhost for some reason mjb
+#fine_warning {background:url(../img/fines_warn.svg) no-repeat;}*/
 
 /*the Fines button mjb*/
 #pay_fines_btn_main,#pay_fines_btn_overview{width:65px;height:25px;border-radius:3px;color:#f3f3f3;background:url(../img/CC_v3.png)center no-repeat #79838d;text-align:left;border:none}
@@ -346,10 +346,33 @@ button.mobile-menu-button {display: none;}
 min-height: 0.5em;
 }
 
+/*remove blue hover under banner logo mjb */
 a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 
 /*fix AngularJS code that pulls homepage boxes out of line mjb */
 @media screen and (min-width:1280px)and (max-width:1600px){
 	.md-padding {margin-left:5em;}
 }
+
+/*Chrome fix - line up My Account boxes across screen mjb...and...*/
+.tiles-grid-tile { 
+  	-webkit-column-break-inside: avoid;
+  	-o-column-break-inside: avoid;
+  	-moz-column-break-inside: avoid;
+  	break-inside: avoid;
+ 	display: flex;
+	margin:0;
+    width: 100%;
+	min-width:0;
+	height: 100%;
+}
+
+/*..put space under each box for small screens mjb*/
+@media screen and (max-width:1260px){
+	.tiles-grid-tile {
+		margin-bottom:1em;
+	}
+}
+
+	
 /*end Merrin's code 14/02/2018*/
