@@ -350,7 +350,7 @@ min-height: 0.5em;
 a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 
 /*fix AngularJS code that pulls homepage boxes out of line mjb */
-@media screen and (min-width:1280px)and (max-width:1600px){
+@media screen and (min-width:1280px) and (max-width:1600px){
 	.md-padding {margin-left:5em;}
 }
 
@@ -373,9 +373,12 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 		margin-bottom:1em;
 	}
 }
-
+/* Fix display of 'X' for Safari mjb */
+.prm-full-view-dialog~.close-button.md-icon-button prm-icon {
+	color:#333;
+}
 	
-/*end Merrin's code 14/02/2018*/
+/*end Merrin's code 15/02/2018*/
 
 /*start: Mikes stuff*/
 /*remove tags*/
