@@ -341,10 +341,10 @@ button#more-links-button {border-right:1px solid #e1e1e1;}
 button.mobile-menu-button {display: none;}
 }
 
-/*remove extra space in basic search results mjb */
+/*remove extra space in basic search results mjb 
 .search-result-availability-line-wrapper {
 min-height: 0.5em;
-}
+}*/
 
 /*remove blue hover under banner logo mjb */
 a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
@@ -374,7 +374,7 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 	}
 }
 /* Fix display of 'X' for Safari mjb */
-.prm-full-view-dialog~.close-button.md-icon-button prm-icon {
+.prm-full-view-dialog.close-button.md-icon-button prm-icon {
 	color:#CCC;
 }
 	
