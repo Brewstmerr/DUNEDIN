@@ -375,7 +375,7 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 }
 /* Fix display of 'X' for Safari mjb */
 .prm-full-view-dialog~.close-button.md-icon-button prm-icon {
-	color:#333;
+	color:#CCC;
 }
 	
 /*end Merrin's code 15/02/2018*/
