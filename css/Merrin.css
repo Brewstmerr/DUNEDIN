@@ -362,7 +362,7 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
   	break-inside: avoid;
  	display: flex;
 	margin:0;
-    width: 100%;
+    	width: 100%;
 	min-width:0;
 	height: 100%;
 }
@@ -375,4 +375,4 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 }
 
 	
-/*end Merrin's code 14/02/2018*/
+/*end Merrin's code 15/02/2018*/
