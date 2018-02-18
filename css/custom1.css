@@ -1,9 +1,4 @@
-/*logo for mobile mjb
-@media screen and (max-width:768px) {
-	.product-logo {
-		position:absolute; top:0; left:0;height:67px;width: 54px; background:url(../img/mobile_DUNEDIN.png)no-repeat;margin-top:-13px;
-	}
-}*/
+/*Begin Merrin's code 16/2/2018*/
 
 html,body {background: #FFF;color: #333;}
 
@@ -17,13 +12,11 @@ prm-topbar {border-top: 13px solid #f9c000;}
 prm-atoz-search-bar {background:#79838d;}
 
 /*make logo area bit better mjb*/
-prm-logo .product-logo{cursor:pointer;height:100%;padding:0;}
-
-prm-logo .product-logo a:hover{background: none;}
+prm-logo .product-logo{cursor:pointer;height:100%;padding:0}
 
 /*stop nav from sliding under logo mjb*/
 prm-topbar prm-logo{z-index:10;height:100%;max-width:454px;}
-prm-logo .logo-image, prm-logo img{max-height:138px;margin-top:-13px;}
+prm-logo .logo-image,prm-logo img{max-height:138px;margin-top:-13px;}
 prm-main-menu[menu-type="menu"] .top-nav-bar-links {margin-left: 2px;}
 
 /*apply min height to top bar so images show up mjb*/
@@ -108,7 +101,18 @@ select#signin_choice{-webkit-appearance:none;-moz-appearance:none;appearance:non
 #signin_btn:hover{border:1px solid #CCC;box-shadow:0 0 28px #e4e4e4;transition:.3s all ease-out}
 
 /*position sign out button mjb*/
-.sign_out_buttonV{position:absolute;right:1em;top:1.6em;width:82px;border:1px solid #e1e1e1;border-radius:3px;min-height:0;height:2.5em;padding:0;overflow:hidden}
+.sign_out_buttonV {
+	position:absolute;
+	right:1em;
+	top:1.6em;
+	width:82px;
+	border:1px solid #e1e1e1;
+	border-radius:3px !important;
+	min-height:0 !important;
+	height:2.5em !important;
+	padding:0;
+	overflow:hidden
+}
 
 /*don't display sign in/out icon mjb */
 #sign_out_button > button > prm-icon > md-icon,prm-authentication > button > prm-icon > md-icon, prm-user-area-after .sign_out_buttonV prm-icon > md-icon {display: none;}
@@ -130,7 +134,7 @@ prm-library-card-menu > button > prm-icon {border-radius: 50%;padding: 0.14em 0.
 
 #fixed-buttons-holder{position:absolute;float:right}
 
-#library_card_button_not_signed_in {border-radius:50%;background:#79838d;position:absolute;right:1.2em;top:5em;min-height:0;min-width:10px;height:40px;width:40px;}
+#library_card_button_not_signed_in{border-radius:50%;background:#79838d;position:absolute;right:1.2em;top:5em;min-height:0;min-width:10px;height:40px;width:40px;}
 #library_card_button_not_signed_in > button{position:absolute;min-height:0;min-width:10px;height:40px;width:40px;z-index:1;border-radius:50%;color: #e1e1e1;}
 #library_card_button_not_signed_in > button:hover {background:#e1e1e1; color:#f4f4f4;border-radius: 50%; }
 #library_card_button_not_signed_in > button > md-icon{margin-top:-2px;}
@@ -149,19 +153,10 @@ prm-library-card-menu > button > prm-icon {border-radius: 50%;padding: 0.14em 0.
 
 
 /*user area warnings mjb after Mike*/
-#user_warnings{position:absolute;right:-0.7em;top:4.3em;display:flex;transform:scale(.75,.75);width: 6em;}
-.usermenu_warn{display:flex;padding-right:.2em;width:24px}
-#fines_warning_icon_div > md-icon{background-color:tomato;border-radius:50%;min-height:18px;min-width:18px;height:20px;width:20px;margin-top:1px;}
-#overdue_warning{margin-left:-1.3em}
-#overdue_warning_white_background{height:1em;width:1em;background-color:#FFF;border-radius:50%;margin-top:.4em}
-#request_warning{margin-left:-1.2em}#request_background{margin-left:-0.2em;padding-top:.4em;padding-bottom:.4em}
-#msg_warning{margin-left:-0.7em}
-
-/*make the dollar sign appear - it's not currently for me in localhost for some reason mjb
-#fine_warning {background:url(../img/fines_warn.svg) no-repeat;}*/
+#user_warnings{position:absolute;right:-0.7em;top:4.3em;display:flex;transform:scale(.75,.75);width: 6em;}.usermenu_warn{display:flex;padding-right:.2em;width:24px}#fines_warning_icon_div > md-icon{background-color:tomato;border-radius:50%;min-height:18px;min-width:18px;height:20px;width:20px;margin-top:2px;}#overdue_warning{margin-left:-1.3em}#overdue_warning_white_background{height:1em;width:1em;background-color:#FFF;border-radius:50%;margin-top:.4em}#request_warning{margin-left:-1.2em}#request_background{margin-left:-0.2em;padding-top:.4em;padding-bottom:.4em}#msg_warning{margin-left:-0.7em}
 
 /*the Fines button mjb*/
-#pay_fines_btn_main,#pay_fines_btn_overview{width:65px;height:25px;border-radius:3px;color:#f3f3f3;background:url(../img/CC_v3.png)center no-repeat #79838d;text-align:left;border:none}
+#pay_fines_btn_main,#pay_fines_btn_overview{width:65px;height:25px;border-radius:3px;color:#f3f3f3;background:url(../img/CC_v3.png) 91% center no-repeat #79838d;text-align:left;border:none}
 
 /*position Fines button on Overview page mjb*/
 #pay_fines_btn_wrapper_overview{position:relative;top:10px;margin-left:75%}
@@ -179,7 +174,7 @@ prm-library-card-menu > button > prm-icon {border-radius: 50%;padding: 0.14em 0.
 prm-user-area {background: #FFF;}
 
 /*My Library account button mjb*/
-prm-library-card-menu > button > prm-icon{border-radius:50%;padding:.14em .55em;background:#79838d;}
+prm-library-card-menu > button > prm-icon{border-radius:50%;padding:.14em .55em;background:#79838d}
 
 /*My Library account words mjb*/
 prm-explore-main > div > prm-topbar > div > prm-user-area > div > prm-library-card-menu > button > span {color: #333;}
@@ -259,7 +254,7 @@ prm-search-bar .simple-search-wrapper .search-options prm-tabs-and-scopes-select
 prm-logo img {display: none;}
 
 /*logo for mobile mjb*/
-.product-logo {position:absolute; top:0; left:0;height:67px;width:54px; background:url(../img/mobile_DUNEDIN.png);margin-top:-13px;}
+.product-logo {position:absolute; top:0; left:0;height:67px;width:54px; background:url(/primo-explore/custom/DUNEDIN/img/mobile_DUNEDIN.png)no-repeat;margin-top:-13px;}
     
 #mobile_menu {display: none;}
 
@@ -350,7 +345,7 @@ min-height: 0.5em;
 a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 
 /*fix AngularJS code that pulls homepage boxes out of line mjb */
-@media screen and (min-width:1280px) and (max-width:1600px){
+@media screen and (min-width:1280px)and (max-width:1600px){
 	.md-padding {margin-left:5em;}
 }
 
@@ -362,7 +357,7 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
   	break-inside: avoid;
  	display: flex;
 	margin:0;
-    	width: 100%;
+    width: 100%;
 	min-width:0;
 	height: 100%;
 }
@@ -373,12 +368,16 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 		margin-bottom:1em;
 	}
 }
+
 /* Fix display of 'X' for Safari mjb */
 .prm-full-view-dialog.close-button.md-icon-button prm-icon {
 	color:#CCC;
 }
-	
-/*end Merrin's code 15/02/2018*/
+
+/*end Merrin's code 16/2/2018*/
+
+
+
 
 /*start: Mikes stuff*/
 /*remove tags*/
@@ -574,7 +573,7 @@ prm-view-online > div > a > prm-icon [aria-label="icon-open-in-new"] {
     display: block;
     width: 100%;
 	height: 100%;
-	background: url(../img/loading.gif) no-repeat 50%;
+	background: url(/primo-explore/custom/CENTRAL_PACKAGE/img/loading.gif) no-repeat 50%;
 	background-size: 40px 40px;
 }
 /*fix the topbar in the services page*/
@@ -706,6 +705,7 @@ prm-search-bookmark-filter #fixed-buttons-holder.fixed-to-top {
 		prm-action-list, prm-action-container {
 			z-index: 15;
 		}
+		
 		@media screen and (min-width: 1890px) {
 			prm-full-view prm-action-container .layout-fill {
 				width: 30em;
@@ -1101,9 +1101,6 @@ prm-login-alma-mashup>div.bar.alert-bar.layout-align-center-center.layout-row {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	-webkit-border-radius: 0;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
 	padding: .5em 1.5em .5em .4em;
@@ -1335,17 +1332,65 @@ prm-search-result-list div.list-item-wrapper {
 #accountoverview md-tab-item.md-tab:nth-child(2) > div:nth-child(1) [icon-definition="timer"] {
 	display: none;
 }
+/*adjust advanced search date dropdown sizes*/
 prm-advanced-search div.date-range-inputs.animate-input.layout-row > md-input-container > md-select > md-select-value > span._md-select-icon {
 	width: 15px;
 }
-/*make the thumbnail images clearer (default is 60px)*/
 prm-search-result-thumbnail-container > div > img {
 	width: 64px !important;
 }
-/* disable "show notification" option when saving search (doesn't currently work) */
-.md-higlight {
-	display:none;
+/*Google translate*/
+#gtWrapper {
+	width: 100%;
+	height: 41px;
+	position: fixed;
+	background-color: #1d437f;
+	bottom: 0;
 }
+#google_translate_element {
+	position: fixed;
+	bottom: 0.5em;
+	right: 16em;
+}
+@media screen and (max-width: 1600px) { 
+	#google_translate_element {
+		bottom: 3.8em;
+		right: 5.7em;
+	}
+}
+@media screen and (max-width: 1280px) { 
+	#google_translate_element {
+		bottom: 0.5em;
+		right: 1em;
+		z-index: 21;
+	}
+	.goog-te-menu-value span:first-child {
+		display: none;
+	}
+	prm-page-nav-menu {
+		bottom: 4.75em !important;
+	}
+}
+@media screen and (max-width: 960px) { 
+	#google_translate_element {
+		bottom: 1em;
+		right: unset;
+		left: 1em;
+		z-index: 21;
+	}
+	.goog-te-menu-value span:first-child {
+		display: unset;
+	}
+}
+@media screen and (max-width: 600px) { 
+	.goog-te-menu-value span:first-child {
+		display: none;
+	}
+}
+/* disable "show notification" option when saving search (doesn't currently work) */
+/*.md-higlight {
+	display:none;
+}*/
 /*feb release remove default exl sign in area*/
 #changUserStatus {
 	display: none;
@@ -1365,7 +1410,7 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 /* commenttttt*/
 
 .md-button {
-    color: #3a3a3a;
+    color: #3a3a3a
 }
 
 .md-button:hover:not([disabled]),
@@ -1374,11 +1419,11 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .md-button.md-focused:not([disabled]),
 .md-button._md-focused:not([disabled]) {
     color: #080606;
-    background-color: rgba(58, 58, 58, 0.1);
+    background-color: rgba(58, 58, 58, .1)
 }
 
 .light-on-dark-dialog .md-button {
-    color: #FFF;
+    color: #FFF
 }
 
 .light-on-dark-dialog .md-button:hover:not([disabled]),
@@ -1387,11 +1432,11 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .light-on-dark-dialog .md-button.md-focused:not([disabled]),
 .light-on-dark-dialog .md-button._md-focused:not([disabled]) {
     color: white;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, .08)
 }
 
 .md-button.md-primary {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .md-button.md-primary:hover:not([disabled]),
@@ -1400,11 +1445,11 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .md-button.md-primary.md-focused:not([disabled]),
 .md-button.md-primary._md-focused:not([disabled]) {
     color: #1b3f7f;
-    background-color: rgba(65, 110, 191, 0.1);
+    background-color: rgba(65, 110, 191, .1)
 }
 
 .md-button.md-secondary {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .md-button.md-secondary:hover:not([disabled]),
@@ -1413,7 +1458,7 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .md-button.md-secondary.md-focused:not([disabled]),
 .md-button.md-secondary._md-focused:not([disabled]) {
     color: #416ebf;
-    background-color: #CCC;
+    background-color: #CCC
 }
 
 .md-button.button-confirm,
@@ -1421,8 +1466,8 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .service-form-static-panel button.button-confirm prm-icon svg path {
     padding-left: 30px;
     padding-right: 21px;
-    background: center #F9C000; /*#86b239*/  
-    color: #333;
+    background: center #F9C000;
+    color: #333
 }
 
 .md-button.button-confirm:hover:not([disabled]),
@@ -1441,7 +1486,7 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .service-form-static-panel button.button-confirm prm-icon+span._md-focused:not([disabled]),
 .service-form-static-panel button.button-confirm prm-icon svg path._md-focused:not([disabled]) {
     color: #333;
-    background-color: #dfa000;
+    background-color: rgba(109, 132, 45, .1)
 }
 
 .light-on-dark-dialog .md-button.button-confirm,
@@ -1449,7 +1494,7 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .service-form-static-panel button.button-confirm .light-on-dark-dialog prm-icon+span,
 .light-on-dark-dialog .service-form-static-panel button.button-confirm prm-icon svg path,
 .service-form-static-panel button.button-confirm prm-icon svg .light-on-dark-dialog path {
-    color: #FFF;/*#F9C000; #73E9FF*/
+    color: #FFF
 }
 
 .light-on-dark-dialog .md-button.button-confirm:hover:not([disabled]),
@@ -1477,13 +1522,13 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .service-form-static-panel button.button-confirm .light-on-dark-dialog prm-icon+span._md-focused:not([disabled]),
 .light-on-dark-dialog .service-form-static-panel button.button-confirm prm-icon svg path._md-focused:not([disabled]),
 .service-form-static-panel button.button-confirm prm-icon svg .light-on-dark-dialog path._md-focused:not([disabled]) {
-    color:#FFF ; /*#0dd9ff*/
-    background-color:#86b239; /*rgba(249, 249, 249, 0.1); rgba(115, 233, 255, 0.1);*/
-    border:2px solid #6D842D;
+    color: #FFF;
+    background-color: #86b239;
+    border: 2px solid #6D842D
 }
 
 .md-button.button-notice {
-    color: #e08303;
+    color: #e08303
 }
 
 .md-button.button-notice:hover:not([disabled]),
@@ -1492,11 +1537,11 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .md-button.button-notice.md-focused:not([disabled]),
 .md-button.button-notice._md-focused:not([disabled]) {
     color: #7d4800;
-    background-color: rgba(224, 131, 3, 0.1);
+    background-color: rgba(224, 131, 3, .1)
 }
 
 .md-button.button-prompt {
-    color: #FFFCC4;
+    color: #FFFCC4
 }
 
 .md-button.button-prompt:hover:not([disabled]),
@@ -1505,11 +1550,11 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .md-button.button-prompt.md-focused:not([disabled]),
 .md-button.button-prompt._md-focused:not([disabled]) {
     color: #fff75e;
-    background-color: rgba(255, 252, 196, 0.1);
+    background-color: rgba(255, 252, 196, .1)
 }
 
 .md-button.button-warn {
-    color: #ce0407;
+    color: #ce0407
 }
 
 .md-button.button-warn:hover:not([disabled]),
@@ -1518,14 +1563,14 @@ prm-personal-info md-input-container.underlined-input.md-primoExplore-theme.layo
 .md-button.button-warn.md-focused:not([disabled]),
 .md-button.button-warn._md-focused:not([disabled]) {
     color: #6c0002;
-    background-color: rgba(206, 4, 7, 0.1);
+    background-color: rgba(206, 4, 7, .1)
 }
 
 .md-button.button-link,
 md-grid-tile .tile-content>.md-button,
 .tiles-grid-tile .tile-content>.md-button {
     color: #416ebf;
-    box-shadow: none;
+    box-shadow: none
 }
 
 .md-button.button-link:hover:not([disabled]),
@@ -1544,7 +1589,7 @@ md-grid-tile .tile-content>.md-button.md-focused:not([disabled]),
 md-grid-tile .tile-content>.md-button._md-focused:not([disabled]),
 .tiles-grid-tile .tile-content>.md-button._md-focused:not([disabled]) {
     color: #1b3f7f;
-    background-color: rgba(65, 110, 191, 0.1);
+    background-color: rgba(65, 110, 191, .1)
 }
 
 .md-button.button-link.link-alt-color,
@@ -1555,7 +1600,7 @@ md-grid-tile .section-title .tile-content>prm-icon.md-button,
 .tiles-grid-tile .section-title .tile-content>prm-icon.md-button,
 md-grid-tile .tile-content>.md-button.link-alt-color,
 .tiles-grid-tile .tile-content>.md-button.link-alt-color {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .md-button.button-link.link-alt-color:hover:not([disabled]),
@@ -1599,85 +1644,85 @@ md-grid-tile .section-title .tile-content>prm-icon.md-button._md-focused:not([di
 md-grid-tile .tile-content>.md-button.link-alt-color._md-focused:not([disabled]),
 .tiles-grid-tile .tile-content>.md-button.link-alt-color._md-focused:not([disabled]) {
     color: #020b0b;
-    background-color: #416ebf;
+    background-color: #416ebf
 }
 
 .md-button.button-large {
     font-size: 1.2em;
-    padding: .25em .75em;
+    padding: .25em .75em
 }
 
 .md-button.button-large.button-with-icon {
-    padding-left: .5em;
+    padding-left: .5em
 }
 
 .md-button.button-large.button-with-icon>prm-icon+span {
-    padding-right: 0;
+    padding-right: 0
 }
 
 .md-button.button-zero-radius {
-    border-radius: 0;
+    border-radius: 0
 }
 
 .md-button.button-no-hover:hover {
-    background-color: transparent;
+    background-color: transparent
 }
 
 .md-button.md-icon-button.square-button {
-    border-radius: 0;
+    border-radius: 0
 }
 
 .md-button.md-icon-button.icon-button-large {
     height: 50px;
     width: 50px;
     min-height: 50px;
-    min-width: 50px;
+    min-width: 50px
 }
 
 .md-button.md-icon-button.icon-button-large md-icon {
     height: 40px;
     width: 40px;
     min-height: 40px;
-    min-width: 40px;
+    min-width: 40px
 }
 
 .md-button.md-icon-button.icon-button-large prm-icon {
     position: relative;
     left: -4px;
-    top: -3px;
+    top: -3px
 }
 
 .md-button.button-with-icon>prm-icon {
-    display: inline-block;
+    display: inline-block
 }
 
 .md-button.button-with-icon>prm-icon md-icon {
     position: relative;
-    top: -2px;
+    top: -2px
 }
 
 .md-button.button-with-icon>prm-icon+span {
     display: inline-block;
     margin-left: 3px;
-    padding-right: 0.5em;
+    padding-right: .5em
 }
 
 [dir=rtl] .md-button.button-with-icon>prm-icon+span {
     padding-right: 0;
-    padding-left: 0.5em;
+    padding-left: .5em
 }
 
 .md-button.button-large .md-button.button-with-icon>prm-icon+span {
-    padding-right: 0;
+    padding-right: 0
 }
 
 .md-button.button-with-icon>span+prm-icon {
-    margin-right: 0;
+    margin-right: 0
 }
 
 .md-button.button-with-icon>span+prm-icon md-icon {
     margin-left: 5px;
-    margin-right: 0;
+    margin-right: 0
 }
 
 .md-button.icon-button-with-text,
@@ -1686,20 +1731,20 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
     font-size: 10px;
     line-height: 14px;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    letter-spacing: .03em
 }
 
 .md-button.outline-button {
-    border: 1px solid;
+    border: 1px solid
 }
 
 .md-button.md-raised:not([disabled]) {
-    box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 8px -4px rgba(0, 0, 0, .26)
 }
 
 .md-button[disabled="disabled"] {
-    color: #ccc !important;
-    cursor: not-allowed;
+    color: #ccc!important;
+    cursor: not-allowed
 }
 
 .md-button.button-as-link,
@@ -1715,7 +1760,7 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     letter-spacing: 0;
-    color: #416ebf;
+    color: #416ebf
 }
 
 .md-button.button-as-link:hover:not([disabled]),
@@ -1729,7 +1774,7 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
 .md-button.button-as-link._md-focused:not([disabled]),
 .bar prm-authentication .md-button._md-focused:not([disabled]) {
     color: #1b3f7f;
-    background-color: rgba(65, 110, 191, 0.1);
+    background-color: rgba(65, 110, 191, .1)
 }
 
 .md-button.button-as-link.link-alt-color,
@@ -1737,7 +1782,7 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
 .bar prm-authentication .section-title prm-icon.md-button,
 .section-title .bar prm-authentication prm-icon.md-button,
 .section-title prm-icon.md-button.button-as-link {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .md-button.button-as-link.link-alt-color:hover:not([disabled]),
@@ -1766,19 +1811,19 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
 .section-title .bar prm-authentication prm-icon.md-button._md-focused:not([disabled]),
 .section-title prm-icon.md-button.button-as-link._md-focused:not([disabled]) {
     color: #FFF;
-    background-color: #416ebf;
+    background-color: #416ebf
 }
 
 .md-button.button-as-link.button-external-link span,
 .bar prm-authentication .md-button.button-external-link span {
     position: relative;
-    top: 1px;
+    top: 1px
 }
 
 .light-on-dark-dialog .md-button.button-as-link,
 .light-on-dark-dialog .bar prm-authentication .md-button,
 .bar prm-authentication .light-on-dark-dialog .md-button {
-    color: #F9C000 ; /*#73E9FF*/
+    color: #F9C000
 }
 
 .light-on-dark-dialog .md-button.button-as-link:hover:not([disabled]),
@@ -1796,29 +1841,29 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
 .light-on-dark-dialog .md-button.button-as-link._md-focused:not([disabled]),
 .light-on-dark-dialog .bar prm-authentication .md-button._md-focused:not([disabled]),
 .bar prm-authentication .light-on-dark-dialog .md-button._md-focused:not([disabled]) {
-    color:#F9C000 ;
-    background-color: rgba(115, 233, 255, 0.1);
+    color: #F9C000;
+    background-color: rgba(115, 233, 255, .1)
 }
 
 .md-button.flex-button {
     display: -ms-flexbox;
-    display: flex;
+    display: flex
 }
 
 .md-button.inline-button {
-    display: inline;
+    display: inline
 }
 
 .md-button.inline-button.flex-button {
     display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: inline-flex
 }
 
 .md-button.md-mini {
     line-height: 40px;
     width: 40px;
     height: 40px;
-    min-width: 40px;
+    min-width: 40px
 }
 
 .md-button.multi-line-button,
@@ -1828,11 +1873,11 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
 .__sm prm-tags-search-bar .search-switch-buttons .md-button {
     white-space: normal;
     line-height: 1.2em;
-    padding: .5em;
+    padding: .5em
 }
 
 .md-button.button-full-height {
-    height: 100%;
+    height: 100%
 }
 
 .md-button.neutralized-button {
@@ -1848,44 +1893,44 @@ prm-action-list>md-nav-bar .md-nav-item .md-button,
     text-align: inherit;
     overflow: visible;
     font-size: 1em;
-    border-radius: 0;
+    border-radius: 0
 }
 
 .md-button.neutralized-button:hover {
-    background-color: transparent;
+    background-color: transparent
 }
 
 .md-button.arrow-link-button .button-content {
-    line-height: 1.4em;
+    line-height: 1.4em
 }
 
 .md-button.arrow-link-button:hover,
 .md-button.arrow-link-button:focus {
-    background: transparent;
+    background: transparent
 }
 
 .md-button.arrow-link-button [link-arrow] {
-    position: static;
+    position: static
 }
 
 .buttons-group .md-button {
-    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, .1)
 }
 
 .buttons-group .md-button:first-child {
-    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1), -1px 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, .1), -1px 0 0 0 rgba(0, 0, 0, .1)
 }
 
 [dir="rtl"] .buttons-group .md-button:first-child {
-    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, .1)
 }
 
 [dir="rtl"] .buttons-group .md-button:last-child {
-    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.1), -1px 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, .1), -1px 0 0 0 rgba(0, 0, 0, .1)
 }
 
 .md-button .md-ripple-container+.md-ripple-container {
-    display: none;
+    display: none
 }
 
 .prm-primary-color,
@@ -1902,7 +1947,7 @@ prm-add-query-to-saved-searches .custom-button,
 md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-active:not([disabled]),
 md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-focused:not([disabled]),
 md-tab-content .tab-content-header md-input-container md-select-value .md-text {
-    color: #79838d;
+    color: #79838d
 }
 
 .prm-primary-bg,
@@ -1912,7 +1957,7 @@ prm-journals-search-bar,
 prm-browse-search-bar,
 prm-tags-search-bar {
     color: white;
-    background-color: #79838d;
+    background-color: #79838d
 }
 
 .prm-primary-bg.prm-hue1,
@@ -1922,7 +1967,7 @@ prm-search-bar.prm-hue1,
 prm-journals-search-bar.prm-hue1,
 prm-browse-search-bar.prm-hue1,
 prm-tags-search-bar.prm-hue1 {
-    background-color: #FFF;
+    background-color: #FFF
 }
 
 .prm-primary-bg.prm-hue2,
@@ -1932,7 +1977,7 @@ prm-journals-search-bar.prm-hue2,
 prm-browse-search-bar.prm-hue2,
 prm-tags-search-bar.prm-hue2,
 md-backdrop.md-opaque {
-    background-color: #6d7680;
+    background-color: #6d7680
 }
 
 .prm-primary-bg.prm-hue3,
@@ -1941,7 +1986,7 @@ prm-search-bar.prm-hue3,
 prm-journals-search-bar.prm-hue3,
 prm-browse-search-bar.prm-hue3,
 prm-tags-search-bar.prm-hue3 {
-    background-color: #68717a;
+    background-color: #68717a
 }
 
 .prm-primary-bg.prm-hue3-important,
@@ -1952,7 +1997,7 @@ prm-search-bar.prm-hue3-important,
 prm-journals-search-bar.prm-hue3-important,
 prm-browse-search-bar.prm-hue3-important,
 prm-tags-search-bar.prm-hue3-important {
-    background-color: #68717a !important;
+    background-color: #68717a!important
 }
 
 .prm-primary-bg.prm-hue4,
@@ -1961,25 +2006,25 @@ prm-search-bar.prm-hue4,
 prm-journals-search-bar.prm-hue4,
 prm-browse-search-bar.prm-hue4,
 prm-tags-search-bar.prm-hue4 {
-    background-color: #616a72;
+    background-color: #616a72
 }
 
 .prm-primary-border {
-    border-color: #79838d;
+    border-color: #79838d
 }
 
 .prm-primary-border.prm-hue1 {
-    border-color: #79838d;
+    border-color: #79838d
 }
 
 .prm-primary-border.prm-hue2 {
-    border-color: #79838d;
+    border-color: #79838d
 }
 
 .prm-secondary-color,
 prm-search-bookmark-filter .md-button,
 prm-topbar .top-nav-bar {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-secondary-color.prm-hue1,
@@ -1990,18 +2035,18 @@ prm-add-query-to-saved-searches .custom-button.pin-button,
 prm-search-bookmark-filter .prm-hue1.md-button,
 prm-topbar .prm-hue1.top-nav-bar,
 prm-recomendation-item .media-on-hover .pin-button {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-secondary-color.prm-hue2,
 prm-search-bookmark-filter .prm-hue2.md-button,
 prm-topbar .prm-hue2.top-nav-bar {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-secondary-bg,
 md-progress-linear[md-mode=indeterminate].header-progress-bar .md-bar {
-    background-color: #416ebf;
+    background-color: #416ebf
 }
 
 .prm-secondary-bg.prm-hue1,
@@ -2018,18 +2063,18 @@ md-input-container.empty-select-on-init:not(.md-input-focused) md-select md-sele
 md-input-container.empty-select-on-init:not(.md-input-focused) .md-input-container-dummy>.md-select-dummy md-select-value:after,
 md-radio-button.md-checked .md-on,
 md-radio-button.md-checked ._md-on {
-    background-color: #416ebf;
+    background-color: #416ebf
 }
 
 .prm-secondary-bg.prm-hue2,
 md-progress-linear[md-mode=indeterminate].header-progress-bar .prm-hue2.md-bar,
 md-checkbox.md-checked .md-icon,
 md-checkbox.md-checked ._md-icon {
-    background-color: #416ebf;
+    background-color: #416ebf
 }
 
 .prm-secondary-border {
-    border-color: #416ebf;
+    border-color: #416ebf
 }
 
 .prm-secondary-border.prm-hue1,
@@ -2041,7 +2086,7 @@ md-select:not([disabled]):focus .md-select-value,
 .md-input-focused md-select:not([disabled]) .md-select-value,
 md-radio-button.md-checked .md-off,
 md-radio-button.md-checked ._md-off {
-    border-color: #416ebf;
+    border-color: #416ebf
 }
 
 .prm-background,
@@ -2070,7 +2115,7 @@ md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-di
 md-dialog md-toolbar:not(.md-menu-toolbar),
 md-card .card-content-block {
     background-color: #FFF;
-    border-color: #e1e1e1;
+    border-color: #e1e1e1
 }
 
 .prm-background.prm-hue1,
@@ -2108,7 +2153,6 @@ md-toolbar.md-primoExplore-theme.default-toolbar,
 md-toolbar.default-toolbar:not(.md-menu-toolbar) {
     background-color: #f7f7f7;
     border-color: #d5d5d5;
-    background-color: gainsboro;
 }
 
 .prm-background.prm-hue2,
@@ -2178,7 +2222,7 @@ md-card.default-card,
 prm-featured-result-item md-card,
 md-card .prm-hue2.card-content-block,
 md-list.prm-list.prm-linkable-list-items md-list-item ._md-list-item-inner {
-   background-color: #f3f3f3;
+    background-color: #f3f3f3
 }
 
 .prm-background.prm-hue3,
@@ -2206,7 +2250,7 @@ prm-full-view-cont .recommendations-title prm-icon.prm-hue3,
 md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider.prm-hue3,
 md-dialog md-toolbar.prm-hue3:not(.md-menu-toolbar),
 md-card .prm-hue3.card-content-block {
-    background-color: #FFF;
+    background-color: #FFF
 }
 
 .prm-background.prm-hue4,
@@ -2235,7 +2279,7 @@ prm-full-view-cont .recommendations-title prm-icon.prm-hue4,
 md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider.prm-hue4,
 md-dialog md-toolbar.prm-hue4:not(.md-menu-toolbar),
 md-card .prm-hue4.card-content-block {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1
 }
 
 .prm-background.prm-hue5,
@@ -2264,7 +2308,7 @@ prm-full-view-cont .recommendations-title prm-icon.prm-hue5,
 md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider.prm-hue5,
 md-dialog md-toolbar.prm-hue5:not(.md-menu-toolbar),
 md-card .prm-hue5.card-content-block {
-    background-color: rgba(233, 233, 233, 0.5);
+    background-color: rgba(233, 233, 233, .5)
 }
 
 .prm-background.prm-hue6,
@@ -2293,7 +2337,7 @@ prm-full-view-cont .recommendations-title prm-icon.prm-hue6,
 md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider.prm-hue6,
 md-dialog md-toolbar.prm-hue6:not(.md-menu-toolbar),
 md-card .prm-hue6.card-content-block {
-    background-color: #e6e6e6;
+    background-color: #e6e6e6
 }
 
 .prm-background.prm-hue7,
@@ -2325,7 +2369,7 @@ md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-di
 md-dialog md-toolbar.prm-hue7:not(.md-menu-toolbar),
 md-card .prm-hue7.card-content-block,
 md-switch .md-bar {
-    background-color: #cfcfcf;
+    background-color: #cfcfcf
 }
 
 .prm-background.prm-hue8,
@@ -2354,7 +2398,7 @@ prm-full-view-cont .recommendations-title prm-icon.prm-hue8,
 md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider.prm-hue8,
 md-dialog md-toolbar.prm-hue8:not(.md-menu-toolbar),
 md-card .prm-hue8.card-content-block {
-    background-color: #f8f8f8;
+    background-color: #f8f8f8
 }
 
 .prm-background.prm-hue9,
@@ -2383,7 +2427,7 @@ md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-di
 md-dialog md-toolbar.prm-hue9:not(.md-menu-toolbar),
 md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-focused:not([disabled]),
 md-card .prm-hue9.card-content-block {
-    background-color: gainsboro;
+    background-color: gainsboro
 }
 
 .prm-background.prm-hue10,
@@ -2414,7 +2458,7 @@ md-card .prm-hue10.card-content-block,
 md-toolbar .toolbar-divider,
 md-toolbar.md-primoExplore-theme .toolbar-divider,
 md-toolbar:not(.md-menu-toolbar) .toolbar-divider {
-    background-color: #cacaca;
+    background-color: #cacaca
 }
 
 .prm-background.prm-hue11,
@@ -2445,7 +2489,7 @@ md-card .prm-hue11.card-content-block,
 md-toolbar.citations-toolbar .toolbar-section,
 md-toolbar.md-primoExplore-theme.citations-toolbar .toolbar-section,
 md-toolbar:not(.md-menu-toolbar).citations-toolbar .toolbar-section {
-    background-color: #e4e4e4;
+    background-color: #e4e4e4
 }
 
 .prm-background.prm-hue13,
@@ -2473,20 +2517,20 @@ prm-full-view-cont .recommendations-title prm-icon.prm-hue13,
 md-virtual-repeat-container#prm-simple-search .md-autocomplete-suggestions md-divider.prm-hue13,
 md-dialog md-toolbar.prm-hue13:not(.md-menu-toolbar),
 md-card .prm-hue13.card-content-block {
-    background-color: #eeeeee;
+    background-color: #eee
 }
 
 .prm-background-color,
 md-grid-tile .message-with-icon md-icon,
 .tiles-grid-tile .message-with-icon md-icon {
-    color: #e9e9e9;
+    color: #e9e9e9
 }
 
 .prm-background-color.prm-hue4,
 .service-form-static-panel,
 md-grid-tile .message-with-icon md-icon.prm-hue4,
 .tiles-grid-tile .message-with-icon md-icon.prm-hue4 {
-    color: #f1f1f1;
+    color: #f1f1f1
 }
 
 .prm-background-border,
@@ -2510,7 +2554,7 @@ md-grid-tile .tile-content md-divider,
 .tiles-grid-tile md-list md-divider,
 .tiles-grid-tile .tile-content md-divider {
     border-color: #e9e9e9;
-    border-color: #e1e1e1 !important;
+    border-color: #e1e1e1!important
 }
 
 .prm-background-border.prm-hue1,
@@ -2534,7 +2578,7 @@ md-grid-tile .tile-content md-divider.prm-hue1,
 .tiles-grid-tile md-list md-divider.prm-hue1,
 .tiles-grid-tile .tile-content md-divider.prm-hue1 {
     border-color: #f0f0f0;
-    border-color: #d5d5d5 !important;
+    border-color: #d5d5d5!important
 }
 
 .prm-background-border.prm-hue2,
@@ -2557,7 +2601,7 @@ md-grid-tile md-list md-divider.prm-hue2,
 md-grid-tile .tile-content md-divider.prm-hue2,
 .tiles-grid-tile md-list md-divider.prm-hue2,
 .tiles-grid-tile .tile-content md-divider.prm-hue2 {
-    border-color: #ececec !important;
+    border-color: #ececec!important
 }
 
 .prm-background-border.prm-hue3,
@@ -2581,7 +2625,7 @@ md-grid-tile md-list md-divider.prm-hue3,
 md-grid-tile .tile-content md-divider.prm-hue3,
 .tiles-grid-tile md-list md-divider.prm-hue3,
 .tiles-grid-tile .tile-content md-divider.prm-hue3 {
-    border-color: #e1e1e1;
+    border-color: #e1e1e1
 }
 
 .prm-background-border.prm-hue4,
@@ -2607,7 +2651,7 @@ md-grid-tile .tile-content md-divider.prm-hue4,
 md-toolbar.citations-toolbar .toolbar-section,
 md-toolbar.md-primoExplore-theme.citations-toolbar .toolbar-section,
 md-toolbar:not(.md-menu-toolbar).citations-toolbar .toolbar-section {
-    border-color: #d7d7d7;
+    border-color: #d7d7d7
 }
 
 .prm-links,
@@ -2662,12 +2706,12 @@ md-grid-tile .tile-header .md-button,
 md-input-container.has-fixed-message [ng-message] a,
 .separate-list-items md-list-item .item-loader-with-text .md-button,
 md-list-item.list-item-as-link {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-links-important,
 .text-link {
-    color: #416ebf !important;
+    color: #416ebf!important
 }
 
 .prm-links.prm-links-hover,
@@ -2715,7 +2759,7 @@ md-grid-tile .tile-header .prm-links-hover.md-button,
 md-input-container.has-fixed-message [ng-message] a.prm-links-hover,
 .separate-list-items md-list-item .item-loader-with-text .prm-links-hover.md-button,
 md-list-item.prm-links-hover.list-item-as-link {
-    color: #173e83;
+    color: #173e83
 }
 
 .prm-links.prm-alt-link,
@@ -2763,7 +2807,7 @@ md-grid-tile .tile-header .prm-alt-link.md-button,
 md-input-container.has-fixed-message [ng-message] a.prm-alt-link,
 .separate-list-items md-list-item .item-loader-with-text .prm-alt-link.md-button,
 md-list-item.prm-alt-link.list-item-as-link {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-links.prm-alt-link.prm-hue1,
@@ -2810,12 +2854,11 @@ md-grid-tile .tile-header .prm-alt-link.prm-hue1.md-button,
 md-input-container.has-fixed-message [ng-message] a.prm-alt-link.prm-hue1,
 .separate-list-items md-list-item .item-loader-with-text .prm-alt-link.prm-hue1.md-button,
 md-list-item.prm-alt-link.prm-hue1.list-item-as-link {
-    color: #F9C000;  /*#73E9FF*/
-    
+    color: #F9C000
 }
 
 .prm-links-bg {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-links-bg:hover:not([disabled]),
@@ -2824,11 +2867,11 @@ md-list-item.prm-alt-link.prm-hue1.list-item-as-link {
 .prm-links-bg.md-focused:not([disabled]),
 .prm-links-bg._md-focused:not([disabled]) {
     color: #1b3f7f;
-    background-color: rgba(65, 110, 191, 0.1);
+    background-color: rgba(65, 110, 191, .1)
 }
 
 .prm-links-bg.prm-hue-1 {
-    background-color: rgba(1, 92, 255, 0.1);
+    background-color: rgba(1, 92, 255, .1)
 }
 
 .prm-links-background.prm-hue-1,
@@ -2848,11 +2891,11 @@ a.hover,
 .md-button.arrow-link-button:focus .button-content,
 prm-citation-trails-item.active-item md-card>.md-button:hover .item-title span,
 prm-citation-trails-item.active-item md-card>.md-button:focus .item-title span {
-    background-color: rgba(65, 110, 191, 0.1);
+    background-color: rgba(65, 110, 191, .1)
 }
 
 .prm-links-background.prm-hue-2 {
-    background-color: rgba(65, 110, 191, 0);
+    background-color: rgba(65, 110, 191, 0)
 }
 
 .prm-links-hover.prm-hue-1,
@@ -2872,15 +2915,15 @@ a.hover,
 .md-button.arrow-link-button:focus .button-content,
 prm-citation-trails-item.active-item md-card>.md-button:hover .item-title span,
 prm-citation-trails-item.active-item md-card>.md-button:focus .item-title span {
-    color: #416ebf;
+    color: #416ebf
 }
 
 .prm-links-hover.prm-hue-2 {
-    color: rgba(23, 62, 131, 0.5);
+    color: rgba(23, 62, 131, .5)
 }
 
 .prm-links-hover.prm-hue-3 {
-    color: rgba(65, 110, 191, 0);
+    color: rgba(65, 110, 191, 0)
 }
 
 .prm-text,
@@ -2915,7 +2958,7 @@ md-toolbar.transparent-toolbar:not(.md-menu-toolbar),
 md-toolbar.default-toolbar,
 md-toolbar.md-primoExplore-theme.default-toolbar,
 md-toolbar.default-toolbar:not(.md-menu-toolbar) {
-    color: #3a3a3a;
+    color: #3a3a3a
 }
 
 .prm-text.prm-hue1,
@@ -2949,7 +2992,7 @@ md-tooltip.bright-tooltip .prm-hue1._md-content,
 md-toolbar.prm-hue1.transparent-toolbar,
 md-toolbar.prm-hue1.default-toolbar {
     color: #333;
-    background: #FFF;
+    background: #FFF
 }
 
 .prm-warn,
@@ -2964,7 +3007,7 @@ prm-tags-list md-chips.md-removable .md-chip .md-chip-remove md-icon,
 prm-tags-list md-chips.md-removable md-chip .md-chip-remove md-icon,
 md-input-container.md-input-invalid,
 .md-chips .md-chip.toggleable-chip .md-chip-remove-container prm-icon.close-button {
-    color: #ce0407;
+    color: #ce0407
 }
 
 .prm-warn-bg,
@@ -2974,37 +3017,37 @@ prm-tags-list .md-chips .md-input-invalid.md-chip-input-container:after,
 prm-tags-list .md-chips .md-input-invalid._md-chip-input-container:after,
 prm-tags-list md-chips .md-input-invalid.md-chip-input-container:after,
 prm-tags-list md-chips .md-input-invalid._md-chip-input-container:after {
-    background-color: #ce0407;
+    background-color: #ce0407
 }
 
 .prm-alert,
 .bar.alert-bar,
 .classic-input .search-scope {
-    color: black;
+    color: black
 }
 
 .prm-alert-bg,
 .bar.alert-bar,
 .classic-input .search-scope {
-    background-color: #F7EDA3;
+    background-color: #F7EDA3
 }
 
 .prm-alert-border,
 .bar.alert-bar,
 .classic-input .search-scope {
-    border-color: #ede49e;
+    border-color: #ede49e
 }
 
 .prm-highlight,
 prm-breadcrumbs .md-chip.persistent-facet {
-    background-color: #FFFCC4;
+    background-color: #FFFCC4
 }
 
 .prm-highlight.prm-hue1,
 .list-item-wrapper .item-bookmarked,
 .list-item-wrapper .item-bookmarked:hover,
 prm-breadcrumbs .prm-hue1.md-chip.persistent-facet {
-    background-color: #FFFCC4;
+    background-color: #FFFCC4
 }
 
 .prm-notice,
@@ -3020,7 +3063,7 @@ prm-breadcrumbs .prm-hue1.md-chip.persistent-facet {
 prm-search-result-frbr-line a>prm-icon:first-child,
 prm-search-result-frbr-line .md-button.arrow-link-button .button-content>prm-icon:first-child,
 .md-button.arrow-link-button prm-search-result-frbr-line .button-content>prm-icon:first-child {
-    color: #e08303;
+    color: #e08303
 }
 
 .prm-positive,
@@ -3030,13 +3073,13 @@ prm-search-result-frbr-line .md-button.arrow-link-button .button-content>prm-ico
 .not_restricted,
 .fulltext,
 .fulltext_linktorsrc {
-    color: #86b239;
+    color: #86b239
 }
 
 .prm-positive-bg,
 .multiselect-submit .multiselect-submit-inner .md-button.md-primary {
-    background-color:#86b239;
-    border:2px solid #6D842D;
+    background-color: #86b239;
+    border: 2px solid #6D842D
 }
 
 .prm-negative,
@@ -3045,19 +3088,19 @@ prm-search-result-frbr-line .md-button.arrow-link-button .button-content>prm-ico
 [class*="no_"],
 .restricted,
 .duedate {
-    color: #79838c;
+    color: #79838c
 }
 
 .prm-citation-color,
 prm-citation-trails-item .item-type {
-    color: #333;
+    color: #333
 }
 
 .prm-citation-color.citation-hover,
 prm-citation-trails-item .citation-hover.item-type,
 prm-citation-trails-indication .md-button.md-icon-button:hover,
 prm-citation-trails-indication .md-button.button-with-icon:hover {
-    color: #333;
+    color: #333
 }
 
 .prm-citation-title,
@@ -3066,7 +3109,7 @@ prm-opac .related-title .related-title-name,
 prm-browse-search md-list.prm-list.prm-linkable-list-items md-list-item .item-title,
 prm-tags-results-list md-list.prm-list.prm-linkable-list-items md-list-item .item-title,
 md-list.prm-list.prm-linkable-list-items md-list-item .item-title {
-    color: #333;
+    color: #333
 }
 
 .prm-hover-list-element-bg,
@@ -3110,19 +3153,18 @@ md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-it
 .md-button.arrow-link-button md-list.prm-list.prm-linkable-list-items md-list-item>.md-button>.button-content:focus+.md-list-item-inner,
 md-list.prm-list.prm-linkable-list-items md-list-item>.md-button>a:focus+._md-list-item-inner,
 md-list.prm-list.prm-linkable-list-items .md-button.arrow-link-button md-list-item>.md-button>.button-content:focus+._md-list-item-inner,
-.md-button.arrow-link-button md-list.prm-list.prm-linkable-list-items md-list-item>.md-button>.button-content:focus+._md-list-item-inner {   
-   box-shadow: 0 0 10px #e4e4e4;
-    transition: 0.2s all ease;  
-    background: #FFF;  
-   
+.md-button.arrow-link-button md-list.prm-list.prm-linkable-list-items md-list-item>.md-button>.button-content:focus+._md-list-item-inner {
+    box-shadow: 0 0 10px #e4e4e4;
+    transition: 0.2s all ease;
+    background: #FFF
 }
 
 .prm-peer-reviewed {
-    color: #8359d4;
+    color: #8359d4
 }
 
 .prm-open-access {
-    color: #f68212;
+    color: #f68212
 }
 
 .prm-personalization,
@@ -3133,7 +3175,7 @@ prm-search-result-list prm-personalize-results-button .md-button md-switch._md-c
 .sidebar .personalization-section .section-title-header,
 .sidebar .personalization-section .sidebar-list,
 .sidebar .personalization-section md-checkbox {
-    color: #333;
+    color: #333
 }
 
 .prm-personalization-bg,
@@ -3148,7 +3190,7 @@ prm-search-result-list prm-personalize-results-button .md-button md-switch._md-c
 .sidebar .personalization-section md-checkbox.md-checked .md-icon,
 .sidebar .personalization-section .sidebar-list li:before,
 .sidebar .personalization-section ul li:before {
-    background-color: #333;
+    background-color: #333
 }
 
 
