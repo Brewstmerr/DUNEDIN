@@ -378,6 +378,9 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 #banner.product-logo a.md-primoExplore-theme {background: none;}
 #banner.product-logo a:hover {background:none;}
 
+/*try and get rid of little blue pixels that appear in Safari on input fields mjb*/
+md-input-container::after{height:0;width:0;content:"";display: block;border-bottom: 2px solid #416ebf;}
+
 /*end Merrin's code 19/2/2018*/
 
 
