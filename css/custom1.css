@@ -1,4 +1,4 @@
-/*Begin Merrin's code 16/2/2018*/
+/*Begin Merrin's code 19/2/2018*/
 
 html,body {background: #FFF;color: #333;}
 
@@ -374,7 +374,11 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 	color:#CCC;
 }
 
-/*end Merrin's code 16/2/2018*/
+/*fix issue with logo hover highlighting mjb*/
+#banner.product-logo a.md-primoExplore-theme {background: none;}
+#banner.product-logo a:hover {background:none;}
+
+/*end Merrin's code 19/2/2018*/
 
 
 
