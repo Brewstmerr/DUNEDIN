@@ -344,12 +344,12 @@ min-height: 0.5em;
 /*remove blue hover under banner logo mjb */
 a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 
-/*fix AngularJS code that pulls homepage boxes out of line mjb */
+/*fix AngularJS code that pulls homepage boxes out of line mjb*/
 @media screen and (min-width:1280px)and (max-width:1600px){
-	.md-padding {margin-left:5em;}
+	prm-static {margin-left:7%;}
 }
 
-/*Chrome fix - line up My Account boxes across screen mjb...and...*/
+/*Chrome fix - line up My Account boxes across screen mjb*/
 .tiles-grid-tile { 
   	-webkit-column-break-inside: avoid;
   	-o-column-break-inside: avoid;
@@ -359,14 +359,8 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 	margin:0;
     width: 100%;
 	min-width:0;
-	height: 100%;
-}
-
-/*..put space under each box for small screens mjb*/
-@media screen and (max-width:1260px){
-	.tiles-grid-tile {
-		margin-bottom:1em;
-	}
+	height: 99%;
+	margin-bottom:1em;
 }
 
 /* Fix display of 'X' for Safari mjb 
