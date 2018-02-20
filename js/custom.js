@@ -9473,12 +9473,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   });
 
   /** Add Google Translate **/
-  /* commented out for feb release testing */
-  /*app.run(function ($rootScope, $window) {
+  app.run(function ($rootScope, $window) {
   	var gtDiv = document.createElement("div");
-  	gtDiv.setAttribute("id", "google_translate_element");
-  	document.body.appendChild(gtDiv);
-  	
+	var para = document.createElement("p"); 
+	var gtrans = document.createTextNode("Translate this page");	 
+	  gtDiv.setAttribute("id", "google_translate");
+	  para.setAttribute("class", "trans");
+  	  document.body.appendChild(gtDiv);
+	  gtDiv.appendChild(gtrans); 
+
   	var gtSrc = document.createElement("script");
   	gtSrc.setAttribute("type", "text/javascript");
   	gtSrc.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
@@ -9491,7 +9494,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   	setTimeout(function(){
   		googleTranslateElementInit();
   	}, 1000);
-  });*/
+  });
 
   /* rest of GA */
   (function (i, s, o, g, r, a, m) {
