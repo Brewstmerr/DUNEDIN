@@ -359,14 +359,12 @@ a.md-primoExplore-theme, #banner > a:nth-child(1):hover {box-shadow:none;}
 	margin:0;
     width: 100%;
 	min-width:0;
-	height: 99%;
+	height: 100%;
 	margin-bottom:1em;
 }
 
-/* Fix display of 'X' for Safari mjb 
-.prm-full-view-dialog.close-button.md-icon-button prm-icon {
-	color:#CCC;
-}*/
+/* Fix display of 'X' for Safari mjb*/
+div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border-radius:50%; opacity:4;}
 
 /*fix issue with logo hover highlighting mjb*/
 #banner.product-logo a.md-primoExplore-theme {background: none;}
