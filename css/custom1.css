@@ -1,4 +1,4 @@
-/*Begin Merrin's code 19/2/2018*/
+/*Begin Merrin's code 20/2/2018*/
 
 html,body {background: #FFF;color: #333;}
 
@@ -373,7 +373,20 @@ div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border
 /*try and get rid of little blue pixels that appear in Safari on input fields mjb*/
 md-input-container::after{height:0;width:0;content:"";display: block;border-bottom: 2px solid #416ebf;}
 
-/*end Merrin's code 19/2/2018*/
+/* google translate button mjb */
+
+#google_translate{
+	position: fixed;
+	bottom:0;
+	right:230px;
+    background: url(../img/translate-icon.png) no-repeat 4px center;
+    padding: 8px 8px 8px 31px;
+    transition: all 0.2s ease;
+}
+
+.trans {color:#333;}
+
+/*end Merrin's code 20/2/2018*/
 
 
 
