@@ -240,12 +240,23 @@ select::-ms-expand {display: none;}
 /*responsive stuff for small screens mjb*/
 
 @media screen and (max-width:640px){
-/*add border to search box mjb*/
-prm-search-bar #searchBar {border-top:1px solid #e1e1e1; border-radius:0;}
-prm-autocomplete md-autocomplete-wrap {border-top:1px solid #e1e1e1;} 
 /*hide the search scopes dropdown mjb*/
 prm-search-bar .simple-search-wrapper .search-options prm-tabs-and-scopes-selector, #select_value_label_1, #select_value_label_2, prm-search-bar div.search-options.flex-sm-40.visible{display: none;}
+}
 
+@media screen and (max-width: 600px) {
+                prm-autocomplete md-autocomplete-wrap {
+                                width: calc(100% - 8.5em);
+                                text-overflow: ellipsis;
+                }
+                prm-search-bar > div > div > div > div > form{
+                                border-top:1px solid #e1e1e1;
+                                border-radius: 0;
+                }
+                prm-search-bar [aria-label="Clear search text"] {
+                                position: absolute;
+                                right: 6.5em;
+                }
 }
 
 @media screen and (max-width:768px)
@@ -296,10 +307,7 @@ input::placeholder  {
   text-overflow: ellipsis;
 }
 
-/*for FF because it's being daft mjb*/
-#searchBar:placeholder-shown {overflow:hidden;max-width:99%;width:99%;border:none;text-overflow: ellipsis;}
-prm-autocomplete md-autocomplete-wrap {width: 99% !important; max-width: 99%;text-overflow: ellipsis;}   
-}
+
 @media screen and (min-width:768px) and (max-width:833px){
 button#more-links-button {border-left:1px solid #e1e1e1;}
 
@@ -387,8 +395,6 @@ md-input-container::after{height:0;width:0;content:"";display: block;border-bott
 .trans {color:#333;}
 
 /*end Merrin's code 20/2/2018*/
-
-
 
 
 /*start: Mikes stuff*/
