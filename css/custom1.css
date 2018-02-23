@@ -307,6 +307,7 @@ input::placeholder  {
   text-overflow: ellipsis;
 }
 
+}
 
 @media screen and (min-width:768px) and (max-width:833px){
 button#more-links-button {border-left:1px solid #e1e1e1;}
@@ -386,14 +387,20 @@ md-input-container::after{height:0;width:0;content:"";display: block;border-bott
 #google_translate{
 	position: fixed;
 	bottom:0;
-	right:230px;
-    background: url(../img/translate-icon.png) no-repeat 4px center;
-    padding: 8px 8px 8px 31px;
+	right:220px;
+    background: url(../img/translate-icon.png) no-repeat 4px center #FFF;
+    padding: 10px 0px 8px 31px;
     transition: all 0.2s ease;
+	z-index: 99999;
+	border:1px solid #CCC;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	border-bottom:none;
 }
 
-.trans {color:#333;}
-
+.goog-te-gadget img {display: none;}
+.goog-te-gadget-simple {border:none!important;}
+.goog-te-gadget-simple .goog-te-menu-value {color:#416ebf!important;}
 /*end Merrin's code 20/2/2018*/
 
 
