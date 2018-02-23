@@ -9471,30 +9471,30 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       $window.ga('b.send', 'pageview', { location: urlPath });
     });
   });
-
-  /** Add Google Translate **/
-  app.run(function ($rootScope, $window) {
-  	var gtDiv = document.createElement("div");
-	var para = document.createElement("p"); 
-	var gtrans = document.createTextNode("Translate this page");	 
-	  gtDiv.setAttribute("id", "google_translate");
-	  para.setAttribute("class", "trans");
-  	  document.body.appendChild(gtDiv);
-	  gtDiv.appendChild(gtrans); 
-
-  	var gtSrc = document.createElement("script");
-  	gtSrc.setAttribute("type", "text/javascript");
-  	gtSrc.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
-  	document.body.appendChild(gtSrc);
-  	
-  	function googleTranslateElementInit() {
-  		new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-  	}
-  	
-  	setTimeout(function(){
-  		googleTranslateElementInit();
-  	}, 1000);
-  });
+	
+	/** Add Google Translate **/
+app.run(function ($rootScope, $window) {
+	var gtDiv = document.createElement("div");
+	//var para = document.createElement("p"); 
+	//var gtrans = document.createTextNode("Translate this page");	 
+	gtDiv.setAttribute("id", "google_translate");
+	//para.setAttribute("class", "trans");
+ 	document.body.appendChild(gtDiv);
+	//gtDiv.appendChild(gtrans);
+	
+	var gtSrc = document.createElement("script");
+	gtSrc.setAttribute("type", "text/javascript");
+	gtSrc.setAttribute("src", "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+	document.body.appendChild(gtSrc);
+	
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate');
+	}
+	
+	setTimeout(function(){
+		googleTranslateElementInit();
+	}, 2000);
+});
 
   /* rest of GA */
   (function (i, s, o, g, r, a, m) {
