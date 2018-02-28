@@ -1,4 +1,4 @@
-/*Begin Merrin's code 28/12/2017*/
+/*Begin Merrin's code 28/2/2018*/
 
 html,body {background: #FFF;color: #333;}
 
@@ -385,6 +385,8 @@ div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border
 .goog-te-gadget img {display: none;}
 .goog-te-gadget-simple {border:none!important;}
 .goog-te-gadget-simple .goog-te-menu-value {color:#416ebf!important;}
+
+
 /*end Merrin's code 28/02/2018*/
 
 
@@ -1353,54 +1355,7 @@ prm-advanced-search div.date-range-inputs.animate-input.layout-row > md-input-co
 prm-search-result-thumbnail-container > div > img {
 	width: 64px !important;
 }
-/*Google translate*/
-#gtWrapper {
-	width: 100%;
-	height: 41px;
-	position: fixed;
-	background-color: #1d437f;
-	bottom: 0;
-}
-#google_translate_element {
-	position: fixed;
-	bottom: 0.5em;
-	right: 16em;
-}
-@media screen and (max-width: 1600px) { 
-	#google_translate_element {
-		bottom: 3.8em;
-		right: 5.7em;
-	}
-}
-@media screen and (max-width: 1280px) { 
-	#google_translate_element {
-		bottom: 0.5em;
-		right: 1em;
-		z-index: 21;
-	}
-	.goog-te-menu-value span:first-child {
-		display: none;
-	}
-	prm-page-nav-menu {
-		bottom: 4.75em !important;
-	}
-}
-@media screen and (max-width: 960px) { 
-	#google_translate_element {
-		bottom: 1em;
-		right: unset;
-		left: 1em;
-		z-index: 21;
-	}
-	.goog-te-menu-value span:first-child {
-		display: unset;
-	}
-}
-@media screen and (max-width: 600px) { 
-	.goog-te-menu-value span:first-child {
-		display: none;
-	}
-}
+
 /* disable "show notification" option when saving search (doesn't currently work) */
 /*.md-higlight {
 	display:none;
@@ -1423,7 +1378,7 @@ prm-full-view prm-brief-result > h3.item-title {
 }
 
 /*make the "clear search terms" X visible again (linked to ellipses/search box changes from dec17)*/
-media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 	prm-autocomplete md-autocomplete-wrap {
 		width: calc(100% - 8.5em);
 		text-overflow: ellipsis !important;
@@ -1443,11 +1398,11 @@ media screen and (max-width: 600px) {
 
 /*reorder the full view sections*/
 #getit_link1_0 { order: 0; }
-#getit_link2_0, #getit_link2 { order: 1; display; none; }
+#getit_link2_0, #getit_link2 { order: 1; display: none; }
 #details { order: 2; }
 #action_list{ order: 3; }
 #links { order: 4; }
-#citations { order: 5; display; none; }
+#citations { order: 5; display: none; }
 #virtualBrowse { order: 6; }
 .full-view-inner-container {
 	padding-bottom: 10em;
@@ -1459,7 +1414,7 @@ media screen and (max-width: 600px) {
 [aria-label="Details"] { order: 2 !important; }
 [aria-label="Send to"] { order: 3 !important; }
 [aria-label="Other"] { order: 4 !important; }
-[aria-label="Citations"] { order: 5 !important; display; none; }
+[aria-label="Citations"] { order: 5 !important; display: none; }
 [aria-label="Virtual Browse"] { order: 6 !important; }
 
 
