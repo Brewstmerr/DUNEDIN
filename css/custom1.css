@@ -1418,7 +1418,7 @@ prm-full-view prm-brief-result > h3.item-title {
 [aria-label="Virtual Browse"] { order: 6 !important; }
 
 
-/*virtual browse adjustments*/
+/*virtual browse*/
 prm-virtual-browse prm-search-result-thumbnail-container, prm-virtual-browse prm-search-result-thumbnail-container > div {
 	height: 100px;
 	padding-top: 2px;
@@ -1435,19 +1435,33 @@ prm-virtual-browse prm-virtual-browse-item .card-image {
 	background-color: unset !important;
 	color: unset !important;
 }
+prm-virtual-browse .md-virtual-repeat-container {
+	height: 280px;
+}
+prm-virtual-browse li {
+	border: 1px solid #d5d5d5;
+}
+prm-virtual-browse li:hover {
+	box-shadow: 0 0 6px gainsboro !important;
+}
 prm-virtual-browse-item md-card {
 	height: 220px;
-	border: 1px solid #d5d5d5;
 	background-color: #F9F9F9;
+	/* background-color: #FFF; */
 }
 prm-virtual-browse-item md-card md-card-title-text:after, prm-virtual-browse-item md-card .weak-text {
 	background-color: #F9F9F9;
+	/* background-color: #FFF; */
+}
+prm-virtual-browse .container-nav-controls prm-icon > md-icon {
+	height: 36px;
+	width: 36px;
 }
 .md-whiteframe-5dp {
 	box-shadow: none;
 }
 prm-virtual-browse .container-nav-controls .nav-control.nav-left, prm-virtual-browse .container-nav-controls .nav-control.nav-right {
-	background: gainsboro;
+	background: #f1f1f1;
 	border: 2px solid #d5d5d5;
 }
 prm-virtual-browse .container-nav-controls .nav-control.nav-left {
@@ -1460,7 +1474,8 @@ prm-virtual-browse .container-nav-controls .nav-control.nav-right {
 prm-virtual-browse prm-search-result-thumbnail-container .fallback-img.fallback-static {
 	height: 99% !important;
 	width: 100% !important;
-	background-image: url("../img/icon_book.png");
+	/* background-image: url("../img/icon_book.png"); */
+	background-image: url("../img/icon_vbdefault.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1469,7 +1484,34 @@ prm-virtual-browse prm-search-result-thumbnail-container .fallback-img.fallback-
 	height: 64px !important;
 	width: 64px !important;
 	margin: 18px;
-	content: url("../img/icon_book.png");
+	/* content: url("../img/icon_book.png"); */
+	content: url("../img/icon_vbdefault.png");
+}
+prm-virtual-browse-item-after {
+    background-color: #F9F9F9;
+    /* background-color: #FFF; */
+    max-height: 100%;
+	width: 100%;
+    font-size: .9em;
+	padding: 0 0.5em;
+	white-space: normal;
+    text-oveflow: ellipsis;
+	height: 40px;
+	display: block;
+}
+prm-virtual-browse-item-after span{
+    background-color: #F9F9F9;
+    /* background-color: #FFF; */
+	color: #333;
+}
+
+/*fix up shadows for bottom search result*/
+prm-search-result-list .pages-separated-with-gaps .list-item-wrapper:nth-last-child(2), prm-search-result-list .pages-separated-with-gaps .list-item-wrapper.first-in-page:not(:first-of-type)::before {
+	box-shadow: none;
+}
+/*fix background color in favorites area*/
+prm-favorites md-list-item.list-item-wrapper {
+	background: #FFF;
 }
 /*end: Mikes stuff*/
 /* primary color hook */
