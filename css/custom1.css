@@ -1,4 +1,4 @@
-/*Begin Merrin's code 28/2/2018*/
+/*Begin Merrin's code 20/3/2018*/
 
 html,body {background: #FFF;color: #333;}
 
@@ -386,8 +386,58 @@ div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border
 .goog-te-gadget-simple {border:none!important;}
 .goog-te-gadget-simple .goog-te-menu-value {color:#416ebf!important;}
 
+.goog-te-menu-value span:first-child {display: none;}
 
-/*end Merrin's code 28/02/2018*/
+/*Google translate*/
+#gtWrapper {
+	width: 100%;
+	height: 41px;
+	position: fixed;
+	background-color: #1d437f;
+	bottom: 0;
+}
+#google_translate_element {
+	position: fixed;
+	bottom: 0.5em;
+	right: 16em;
+}
+@media screen and (max-width: 1600px) { 
+	#google_translate_element {
+		bottom: 3.8em;
+		right: 5.7em;
+	}
+}
+@media screen and (max-width: 1280px) { 
+	#google_translate_element {
+		bottom: 0.5em;
+		right: 1em;
+		z-index: 21;
+	}
+	.goog-te-menu-value span:first-child {
+		display: none;
+	}
+	prm-page-nav-menu {
+		bottom: 4.75em !important;
+	}
+}
+@media screen and (max-width: 960px) { 
+	#google_translate_element {
+		bottom: 1em;
+		right: unset;
+		left: 1em;
+		z-index: 21;
+	}
+	.goog-te-menu-value span:first-child {
+		display: unset;
+	}
+}
+@media screen and (max-width: 600px) { 
+	.goog-te-menu-value span:first-child {
+		display: none;
+	}
+}
+
+/*end Merrin's code 20/3/2018*/
 
 
 
@@ -1418,58 +1468,75 @@ prm-full-view prm-brief-result > h3.item-title {
 [aria-label="Virtual Browse"] { order: 6 !important; }
 
 
-/*virtual browse adjustments*/
-prm-virtual-browse prm-search-result-thumbnail-container, prm-virtual-browse prm-search-result-thumbnail-container > div {
-	height: 100px;
-	padding-top: 2px;
+/*virtual browse*/
+
+prm-virtual-browse .md-virtual-repeat-container  {
+	height:280px;
 }
-prm-virtual-browse prm-virtual-browse-item md-card .card-image img {
-	height: 99% !important;
+
+
+prm-virtual-browse-item > md-card {
+    box-shadow: 0 0 20px #f1f1f1;
+    background:#FFF;
+	border-radius: 3px;
+	min-height: 230px;
+	border:1px solid #DDDDDD;
+	border-bottom: none;
 }
-prm-virtual-browse prm-search-result-thumbnail-container img.main-img {
-	width: auto !important;
-	margin-left: auto;
-	margin-right: auto;
+
+prm-virtual-browse-item md-card .card-image {background: #FFF;}
+
+prm-virtual-browse-item md-card .card-image img {
+	margin:0.5em auto;
+	min-height:100px;
+	background: url("../img/icon_book.png") no-repeat #FFF;
+	
 }
-prm-virtual-browse prm-virtual-browse-item .card-image {
-	background-color: unset !important;
-	color: unset !important;
-}
-prm-virtual-browse-item md-card {
-	height: 220px;
-	border: 1px solid #d5d5d5;
-	background-color: #F9F9F9;
-}
-prm-virtual-browse-item md-card md-card-title-text:after, prm-virtual-browse-item md-card .weak-text {
-	background-color: #F9F9F9;
-}
-.md-whiteframe-5dp {
-	box-shadow: none;
-}
+
 prm-virtual-browse .container-nav-controls .nav-control.nav-left, prm-virtual-browse .container-nav-controls .nav-control.nav-right {
-	background: gainsboro;
-	border: 2px solid #d5d5d5;
+	background: #f1f1f1;
+	border: 1px solid #dddddd;
 }
+
+prm-virtual-browse .container-nav-controls .nav-control.nav-left:hover,
+prm-virtual-browse .container-nav-controls .nav-control.nav-right:hover
+{box-shadow: 0 0 5px #f1f1f1;
+border: 1px solid #cccccc;
+}
+
 prm-virtual-browse .container-nav-controls .nav-control.nav-left {
 	border-radius: 15px 0 0 15px;
 }
 prm-virtual-browse .container-nav-controls .nav-control.nav-right {
 	border-radius: 0 15px 15px 0;
 }
-/*default thumb for chrome*/
-prm-virtual-browse prm-search-result-thumbnail-container .fallback-img.fallback-static {
-	height: 99% !important;
-	width: 100% !important;
-	background-image: url("../img/icon_book.png");
-	background-repeat: no-repeat;
-	background-position: center;
+
+prm-virtual-browse-item-after {
+	background: #fff;
+    font-size: .9em;
+	display: block;
+	color: #333;
+	border:1px solid #dddddd;
+	border-top:none;
+	border-bottom-left-radius: 3px; 
+	border-bottom-right-radius: 3px;
+	padding-left:0.4em;
+	padding-bottom: 1em;
+	margin-top:-1px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-/*default thumb for ffox*/
-prm-virtual-browse prm-search-result-thumbnail-container .fallback-img.fallback-static {
-	height: 64px !important;
-	width: 64px !important;
-	margin: 18px;
-	content: url("../img/icon_book.png");
+
+prm-search-result-thumbnail-container img.fallback-img.fallback-static {position: relative;border:none;}
+
+/*fix up shadows for bottom search result*/
+prm-search-result-list .pages-separated-with-gaps .list-item-wrapper:nth-last-child(2), prm-search-result-list .pages-separated-with-gaps .list-item-wrapper.first-in-page:not(:first-of-type)::before {
+	box-shadow: none;
+}
+/*fix background color in favorites area*/
+prm-favorites md-list-item.list-item-wrapper {
+	background: #FFF;
 }
 /*end: Mikes stuff*/
 /* primary color hook */
