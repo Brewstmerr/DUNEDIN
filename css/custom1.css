@@ -368,6 +368,8 @@ md-input-container::after{height:0;width:0;content:"";display: block;border-bott
 div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border-radius:50%; opacity:4;}
 
 
+/*Google translate mjb*/
+
 /* google translate button mjb */
 #google_translate{
 	position: fixed;
@@ -389,6 +391,7 @@ div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border
 .goog-te-menu-value span:first-child {display: none;}
 
 /*Google translate*/
+
 #gtWrapper {
 	width: 100%;
 	height: 41px;
@@ -435,7 +438,13 @@ div.md-dialog-container.fixed-container > div > button{background:#d4d4d4;border
 	.goog-te-menu-value span:first-child {
 		display: none;
 	}
+	#google_translate {right:260px;margin-bottom:0;height:3em;width:3.7em;}
+
+	.goog-te-menu2, .goog-te-menu-frame, iframe {overflow-x:scroll;white-space: nowrap;border:1px solid red;}
 }
+
+        
+	
 
 /*end Merrin's code 20/3/2018*/
 
