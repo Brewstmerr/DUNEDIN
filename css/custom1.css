@@ -1,4 +1,4 @@
-/*Begin Merrin's code 20/3/2018*/
+/*Begin Merrin's code 28/3/2018*/
 
 html,body {background: #FFF;color: #333;}
 
@@ -482,12 +482,13 @@ prm-search-result-thumbnail-container img.fallback-img.fallback-static {position
 
 }
 
-#google_translate_element::before {content: "Translate this page";font-size: 13px;
-font-family: Georgia, "Times New Roman", Times, serif; background: #efefef;
-display: block;
-color: #333!important;
-padding: 10px;
-margin:-10px -10px 0 -10px;
+#google_translate_element::before {
+	content: "Translate this page";font-size: 13px;
+	font-family: Georgia, "Times New Roman", Times, serif; background: #efefef;
+	display: block;
+	color: #333!important;
+	padding: 10px;
+	margin:-10px -10px 0 -10px;
 }
 #google_translate_element {
 	position: absolute;
@@ -515,7 +516,7 @@ margin:-10px -10px 0 -10px;
 }
 
 
-/*end Merrin's code 20/3/2018*/
+/*end Merrin's code 28/3/2018*/
 
 
 
